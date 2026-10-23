@@ -1,0 +1,33 @@
+=== oom141: datadog 3-field groom ===
+sapi: SAPI=apache2handler lim=16777216 vars=100000
+md5 ok
+sapi after recreate: SAPI=apache2handler lim=16777216 vars=100000
+base=0x7ff95f7d1000
+--- VLEN=288 N=3500000 ---
+try0: http=-1 segv+1 core=True
+  body[:180]: 'ERR RemoteDisconnected'
+core -> /tmp/core.141 a4f5156861d3cecb507981425d0da8c5  /tmp/core.
+measure rdi=0xdededededededede want=0x51e2c0de51e2c0de
+--- VLEN=295 N=3500000 ---
+try0: http=-1 segv+1 core=True
+  body[:180]: 'ERR RemoteDisconnected'
+core -> /tmp/core.141 cad8fa3f284b6a86536fb7e50d216c31  /tmp/core.
+measure rdi=0xdededededededede want=0x51e2c0de51e2c0de
+--- VLEN=263 N=3500000 ---
+try0: http=-1 segv+1 core=True
+  body[:180]: 'ERR RemoteDisconnected'
+core -> /tmp/core.141 174dca7c3d9dca142be0ac815cd6a03a  /tmp/core.
+measure rdi=0xdededededededede want=0x51e2c0de51e2c0de
+--- VLEN=271 N=3500000 ---
+try0: http=-1 segv+1 core=True
+  body[:180]: 'ERR RemoteDisconnected'
+core -> /tmp/core.141 8ebf0e6c557aedef6c5c85d4d54f0402  /tmp/core.
+measure rdi=0xdededededededede want=0x51e2c0de51e2c0de
+--- VLEN=279 N=3500000 ---
+try0: http=-1 segv+1 core=True
+  body[:180]: 'ERR RemoteDisconnected'
+core -> /tmp/core.141 29d9e4275d804247bf8cc270858e4ca5  /tmp/core.
+measure rdi=0xdededededededede want=0x51e2c0de51e2c0de
+BUCKET CONTROL NOT CONFIRMED (rdi != SIG8 for all VLEN)
+final x: NO_X
+=== done ===

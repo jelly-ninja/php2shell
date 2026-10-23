@@ -1,0 +1,11 @@
+=== oom112: boundary-fixed fat walk ===
+fat-m: (200) '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+marker copies: ['0x7f1b41e01718', '0x7f1b41e02518', '0x7f1b41e03318', '0x7f1b41e04118', '0x7f1b41e04f18', '0x7f1b41e05d18']
+b0v=0x7f1b41e01718 stride=3584
+OBJ=0x7f1b41e01908 copy=0 BOFF=496
+fat-aim: (200) '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+readback @OBJ: rc=1 ti=0x108 OK
+fire2: (200) '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+x: ls: cannot access '/tmp/x': No such file or directory
+cat: /tmp/x: No such file or directory
+ls: cannot access '/tmp/core': No such file or directory

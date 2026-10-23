@@ -1,0 +1,22 @@
+=== oom119: heap-resident arm (small values bypass mmap law) ===
+md5=ce1f3c48 corelim=size
+warm k1=1900: 200
+warm k1=1950: 200
+warm k1=2000: -1
+warm k1=2044: 200
+warm k1=2100: 200
+warm k1=2200: -1
+warm k1=2400: 200
+warm k1=2600: 200
+warm k1=2800: -1
+warm k1=3000: 200
+warm k1=3200: 200
+shape segv delta=3
+base=0x7f61f47c5000
+marker post: 200
+C0=0x7f61f2a561a0 strides=['0x12d78', '0x12d90', '0x12dd8']
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom119.py", line 223, in <module>
+    assert B, "no legal B in 64B value window"
+           ^
+AssertionError: no legal B in 64B value window

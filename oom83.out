@@ -1,0 +1,16 @@
+=== oom83: AIM-arm F-probe (0x5a5a window, ti=0x208) ===
+    libphp base = 0x7f06bbdb8000
+[1] CAL warm (11)
+  cal-fire0: 200
+  cal-fire1: ERR
+    rdi=4141414141410000 rip=0x7f06bc253e55 VA0=0x7f06b9601718
+[2] PROBE warm (11), window=0x5a5a5a5a5a5a ti=0x208
+[3] PROBE sacrifice@9200000 + finishers@9210000+4i
+  probe-fire0 (9210000): 200 [fatal]
+  probe-fire1 (9210004): 200 [fatal]
+  probe-fire2 (9210008): 200 [fatal]
+  probe-fire3 (9210012): 200 [fatal]
+  probe-fire4 (9210016): 200 [fatal]
+  probe-fire5 (9210020): 200 [fatal]
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

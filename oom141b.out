@@ -1,0 +1,63 @@
+=== oom141: datadog 3-field groom ===
+sapi: SAPI=apache2handler lim=8388608 vars=100000
+md5 ok
+base=0x7f6024836000
+--- N=4500000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+--- N=5000000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+--- N=5500000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+--- N=6000000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+--- N=6500000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+--- N=7000000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+--- N=7500000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+--- N=7800000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+BUCKET CONTROL NOT CONFIRMED (rdi != SIG8 for all N)
+final x: NO_X
+=== done ===

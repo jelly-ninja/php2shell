@@ -1,0 +1,17 @@
+=== swap instrumented module ===
+ce1f3c48 -> instr
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+[baseline] segv=29
+  atk0: RemoteDisconnected segv=30 (new=1)
+[new segvs] 1
+=== core hunt ===
+[core] /tmp/core -rw------- 1 www-data www-data 22958080 Oct 22 14:30 /tmp/core
+[siginfo] signo=0 code=0 si_addr=0x0
+[crashed pid] None
+  rip=0x0
+  rdi=0x0
+  rsi=0x0
+  rax=0x0
+  rsp=0x0
+[VERDICT] poison_fault=False si_addr=0x0
+[module left] instrumented

@@ -1,0 +1,14 @@
+=== oom78: F-vs-stamp probe ===
+    libphp base = 0x7f51b2cf4000
+[1] CAL warm (11)
+  cal-fire0 (9200000): ERR
+    rdi=4141414141410000 F=0 VA0=0x7f51b0601718
+    rc-check: True (0100000008010000)
+[2] AIM fires, target=0x7f51b0602520 free_obj=0x7f51b308f8a0
+  aim-fire0 (stamp 9210000): 200
+    /tmp/x: not yet
+  aim-fire1 (stamp 9210004): ERR
+    /tmp/x: not yet
+    crash rdi=4141414141410000 F=None (TARGET LE=202560b0517f0000)
+[3] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

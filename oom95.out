@@ -1,0 +1,23 @@
+=== boot 0 ===
+    libphp=0x7f45193cc000 R1=0x7f4517800000 VA0=0x7f4517801718 OBJ=0x7f45178017c8
+    zval-ti = 0x178017c8 -> type=8 refc=1
+  [b0] fire0 (9210000): 200 [fatal]
+  [b0] fire1 (9210004): 200 [fatal]
+  [b0] fire2 (9210008): 200 [fatal]
+    silent boot — reboot and retry
+=== boot 1 ===
+    libphp=0x7f8332c29000 R1=0x7f8330ff6000 VA0=0x7f8330ff7718 OBJ=0x7f8330ff77c8
+    zval-ti = 0x30ff77c8 -> type=8 refc=1
+  [b1] fire0 (9210000): 200 [fatal]
+  [b1] fire1 (9210004): 200 [fatal]
+  [b1] fire2 (9210008): 200 [fatal]
+    silent boot — reboot and retry
+=== boot 2 ===
+    libphp=0x7f86543fc000 R1=0x7f86527f6000 VA0=0x7f86527f7718 OBJ=0x7f86527f77c8
+    zval-ti = 0x527f77c8 -> type=8 refc=1
+  [b2] fire0 (9210000): 200 [fatal]
+  [b2] fire1 (9210004): 200 [fatal]
+  [b2] fire2 (9210008): 200 [fatal]
+    silent boot — reboot and retry
+[restore]
+    restored: SAPI=apache2handler lim=8M vars=100000

@@ -1,0 +1,21 @@
+=== setup ===
+[lib] ce1f3c48 (stock expected)
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+=== fire ===
+[baseline] segv_total_before=29
+  atk0: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 '
+    segv_total=29 (new=0)
+  atk1: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 '
+    segv_total=29 (new=0)
+  atk2: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 '
+    segv_total=29 (new=0)
+  atk3: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 '
+    segv_total=29 (new=0)
+  atk4: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 '
+    segv_total=29 (new=0)
+  atk5: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 '
+    segv_total=29 (new=0)
+[fired] crashed_seen=False
+=== core hunt ===
+(no core listing)
+[NO CORE] pattern: core

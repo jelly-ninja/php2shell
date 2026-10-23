@@ -1,0 +1,11 @@
+=== oom124: signature-anchored arm ===
+md5 ok
+shaped segv=3
+base=0x7f8c121ef000
+fire1: http=200 segv+0 core=True
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom124.py", line 182, in <module>
+    clusters = core_scan(SIG8, "f1")
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom124.py", line 129, in core_scan
+    f = open("/tmp/scan_core", "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/scan_core'

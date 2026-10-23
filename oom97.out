@@ -1,0 +1,4 @@
+=== oom97: live mem aiming (binary scan) ===
+    libphp=0x7f709dc0a000 workers=[17, 18, 19, 20, 21]
+    warm-up sent
+[ABORT] sentinel not found in any worker

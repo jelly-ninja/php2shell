@@ -1,0 +1,13 @@
+=== oom89: converge probe->aim in one boot ===
+    libphp=0x7fbffbc15000 heap=0x7fbff9ff6000 VA0=0x7fbff9ff7718 TARGET=0x7fbff9ff8520
+[cycle %d] PROBE arm 1
+  [c0] fire0 (9210000): ERR [crash]
+    -> walk slot = 8
+[cycle 2] AIM arm at slot 8
+  [c1] fire0 (9210000): 200 [fatal]
+  [c1] fire1 (9210004): 200 [fatal]
+  [c1] fire2 (9210008): 200 [fatal]
+    -> None
+[RESULT] S=8
+[restore]
+    restored: SAPI=apache2handler lim=8M vars=100000

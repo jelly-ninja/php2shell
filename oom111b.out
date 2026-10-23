@@ -1,0 +1,14 @@
+=== oom111: walk-footprint diff ===
+markers: ['0x7f1b426561a0', '0x7f1b42668450', '0x7f1b42668b68', '0x7f1b42669968']
+b0=0x7f1b42656160
+OBJ=0x7f1b42656508 BOFF=936
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom111.py", line 164, in <module>
+    body = fire_body(tile)
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom111.py", line 128, in fire_body
+    body = P.build_attack(parts, b"OOM", value_tile=tile) if "value_tile" in P.build_attack.__code__.co_varnames else P.build_attack(parts, b"OOM")
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vlad/Projects/queue/php2shell-lab/payload68.py", line 190, in build_attack
+    ps += [poison_part(n, stamp_base + n * CELLS) for n in range(PREP)]
+                          ~~~~~~~~~~~^~~~~~~~~~~
+TypeError: can't concat int to bytes

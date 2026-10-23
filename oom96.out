@@ -1,0 +1,4 @@
+=== oom96: live /proc/mem aiming ===
+    pids: [1, 17, 18, 19, 20, 21]
+    mem probe pid=21 va=0x0x0 -> EPERM/FAIL
+[ABORT] /proc/mem not readable — need core-based path

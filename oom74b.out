@@ -1,0 +1,10 @@
+[0] boot + core env
+  libphp=0x7fb7838bb000 heap=0x7fb781bf6000 VA0=0x7fb781bf7718
+[1] warm + sacrifice + fire1 (unrotated) — expect calibration crash
+  fire0: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+  fire0 silent — trying known silent-j rotations
+  [j=32] fire0: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+  [j=32] fire1: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+  [j=80] fire0: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+  [j=80] fire1: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+  no phi — abort

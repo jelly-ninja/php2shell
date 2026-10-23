@@ -1,0 +1,50 @@
+    libphp=0x7f1b442ec000
+-- window 646..654 --
+    V=0x7f1b422017ba OBJ=0x7f1b42201d08 BOFF=1358
+    plant: 200
+    fire0: 200
+    fire1: 200
+    fire2: 200
+-- window 654..662 --
+    V=0x7f1b422017ba OBJ=0x7f1b42201d08 BOFF=1358
+    plant: 200
+    fire0: 200
+    fire1: 200
+    fire2: 200
+-- window 662..670 --
+    V=0x7f1b4266a018 OBJ=0x7f1b4266a508 BOFF=1264
+    plant: 200
+    fire0: 200
+    fire1: 200
+    fire2: 200
+-- window 470..486 --
+    V=0x7f1b422017ba OBJ=0x7f1b42201d08 BOFF=1358
+    plant: 200
+    fire0: 200
+    fire1: 200
+    fire2: 200
+-- window 440..470 --
+    V=0x7f1b422017ba OBJ=0x7f1b42201d08 BOFF=1358
+    plant: 200
+    fire0: 200
+    fire1: 200
+    fire2: 200
+-- window 380..440 --
+    V=0x7f1b422017ba OBJ=0x7f1b42201d08 BOFF=1358
+    plant: 200
+    fire0: 200
+    fire1: 200
+    fire2: 200
+-- window 100..380 --
+    V=0x7f1b422017ba OBJ=0x7f1b42201d08 BOFF=1358
+    plant: 200
+    fire0: 200
+    fire1: 200
+    fire2: 200
+-- window 0..100 --
+    V=0x7f1b422017ba OBJ=0x7f1b42201d08 BOFF=1358
+    plant: 200
+    fire0: 200
+    fire1: 200
+    fire2: 200
+done; /tmp/x=cat: /tmp/x: No such file or directory

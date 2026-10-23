@@ -1,0 +1,8 @@
+=== oom115: same-request names-arm + values-fields ===
+base=0x7f1b44408000
+values copy0=0x1231 -> FV(region)=0x1000
+OBJ=0x2018
+C0=0x1231 OBJ=0x1249 TBL=0x1831 GS=0x1931
+building armed body (names pattern -> OBJ, values -> fields)
+armed: (200) Fatal=False
+x: cat: /tmp/x: No such file or directory

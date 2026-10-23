@@ -1,0 +1,23 @@
+=== oom119: heap-resident arm (small values bypass mmap law) ===
+md5=ce1f3c48 corelim=size
+warm k1=1900: 200
+warm k1=1950: 200
+warm k1=2000: -1
+warm k1=2044: 200
+warm k1=2100: 200
+warm k1=2200: -1
+warm k1=2400: 200
+warm k1=2600: 200
+warm k1=2800: -1
+warm k1=3000: 200
+warm k1=3200: 200
+shape segv delta=3
+base=0x7fc2cdd1d000
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom119.py", line 199, in <module>
+    c, _r = post_mod(marker_body())
+                     ~~~~~~~~~~~^^
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom119.py", line 194, in marker_body
+    ps.append(small_part(i, MARK_CELL if i == 20 else cell_of(0x414141414141)))
+                            ^^^^^^^^^
+NameError: name 'MARK_CELL' is not defined

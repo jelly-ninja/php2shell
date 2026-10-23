@@ -1,0 +1,9 @@
+=== oom141h arm: B=0x7f3be08681b8 k=96 VLEN=295 N=3500000 ===
+wire len: 3500306
+try0: http=-1 segv+1 core=True
+  body[:180]: 'ERR RemoteDisconnected'
+try0: http=-1 segv+1 core=True
+  body[:180]: 'ERR RemoteDisconnected'
+arm done, no x after 3 tries
+final x: NO_X
+=== done ===

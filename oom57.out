@@ -1,0 +1,10 @@
+[module md5] dfd7adad (501 owner = instr)
+[ini] 200 SAPI=apache2handler lim=20600000 vars=100000
+[baseline] segv=30
+  ..10 ok new_segv=0
+  ..20 ok new_segv=0
+  ..30 ok new_segv=0
+  ..40 ok new_segv=0
+  ..50 ok new_segv=0
+  ..60 ok new_segv=0
+[VERDICT] benign_soak=60 failures=0 new_segv=0 -> INSTRUMENT CLEAN — poison delivery causal

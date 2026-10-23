@@ -1,0 +1,7 @@
+=== oom98: self-scan aiming ===
+    probe basic:  R=7f8039a00000 d=670f8 | pid=19
+
+    libphp=0x7f803b776000
+    warm-up sent
+[ABORT] sentinel not found. probe said: pid=16 bad
+

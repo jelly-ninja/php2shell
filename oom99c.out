@@ -1,0 +1,6 @@
+    libphp=0x7f794c4aa000
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom99.py", line 122, in <module>
+    OUT("    probe: R=0x%x offs=%s" % (rva or 0, offs[:4]))
+                                                 ~~~~^^^^
+TypeError: 'NoneType' object is not subscriptable

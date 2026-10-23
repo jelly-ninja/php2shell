@@ -1,0 +1,9 @@
+    libphp=0x7f1b442ec000
+    probe offs=[139755050243690, 139755050243858, 139755050244026, 139755050244194]
+    V=0x7f1b4220166a (mod16=10)
+    OBJ=0x0 (BOFF=-1)
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom101.py", line 126, in <module>
+    assert OBJ
+           ^^^
+AssertionError

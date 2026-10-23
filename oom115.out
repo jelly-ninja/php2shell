@@ -1,0 +1,7 @@
+=== oom115: same-request names-arm + values-fields ===
+base=0x7f1b44408000
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom115.py", line 99, in <module>
+    assert offs, "no values copies"
+           ^^^^
+AssertionError: no values copies

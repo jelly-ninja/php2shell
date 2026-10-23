@@ -1,0 +1,19 @@
+=== oom81: AIM tile + CAL stamps ===
+    control: disable_functions=[] suhosin=[n]
+    libphp base = 0x7f3a7711b000
+[1] CAL warm (11)
+  cal-fire0: ERR
+    rdi=4141414141410000 F=0 VA0=0x7f3a74a01718
+    rc-check: True (0100000008010000)
+[2] AIM warm (11, 9100000-family), target=0x7f3a74a02520 free_obj=0x7f3a774b68a0
+[3] AIM sacrifice @9200000 + finishers @9210000+4i (F=0 stamps)
+  sacrifice: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+  aim-fire0 (stamp 9210000): 200 [fatal]
+  aim-fire1 (stamp 9210004): 200 [fatal]
+  aim-fire2 (stamp 9210008): 200 [fatal]
+  aim-fire3 (stamp 9210012): 200 [fatal]
+  aim-fire4 (stamp 9210016): 200 [fatal]
+  aim-fire5 (stamp 9210020): 200 [fatal]
+[RESULT] no RCE this boot
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

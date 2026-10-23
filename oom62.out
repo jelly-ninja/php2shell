@@ -1,0 +1,22 @@
+=== [0] stock verify + conditions ===
+[md5] ce1f3c48ba22f8f17834ac791aead613
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+[baseline] segv=57
+=== [1] sweep NAMELEN 2500..3700 ===
+  nl=2500: 200 segv+=0 cores=0 (16s)
+  nl=2600: 200 segv+=0 cores=0 (16s)
+  nl=2700: 200 segv+=0 cores=0 (16s)
+  nl=2800: 200 segv+=0 cores=0 (16s)
+  nl=2900: 200 segv+=0 cores=0 (16s)
+  nl=3000: 200 segv+=0 cores=0 (16s)
+  nl=3100: 200 segv+=0 cores=0 (16s)
+  nl=3200: 200 segv+=0 cores=0 (15s)
+  nl=3300: 200 segv+=0 cores=0 (16s)
+  nl=3400: 200 segv+=0 cores=0 (16s)
+  nl=3500: 200 segv+=0 cores=0 (15s)
+  nl=3600: 200 segv+=0 cores=0 (16s)
+  nl=3700: 200 segv+=0 cores=0 (16s)
+=== [2] no hit in sweep ===
+=== [3] restore ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000
+=== DONE hit=None ===

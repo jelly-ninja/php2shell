@@ -1,0 +1,23 @@
+=== oom141: datadog 3-field groom ===
+sapi: SAPI=apache2handler lim=8388608 vars=100000
+md5 ok
+base=0x7f9e00869000
+--- N=8300000 ---
+try0: http=200 segv+0 core=False
+try1: http=200 segv+0 core=False
+try2: http=200 segv+0 core=False
+--- N=7500000 ---
+try0: http=200 segv+0 core=False
+try1: http=200 segv+0 core=False
+try2: http=200 segv+0 core=False
+--- N=6000000 ---
+try0: http=200 segv+0 core=False
+try1: http=200 segv+0 core=False
+try2: http=200 segv+0 core=False
+--- N=3500000 ---
+try0: http=200 segv+0 core=False
+try1: http=200 segv+0 core=False
+try2: http=200 segv+0 core=False
+BUCKET CONTROL NOT CONFIRMED (rdi != SIG8 for all N)
+final x: NO_X
+=== done ===

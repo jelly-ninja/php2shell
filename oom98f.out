@@ -1,0 +1,14 @@
+=== oom98: self-scan aiming ===
+    probe basic:  R=7f4a57200000 d=670f8 110110 | pid=17
+
+    libphp=0x7f4a58f33000
+    warm-up sent
+    sentinel at R=0x7f4a56a00000 V=0x7f4a56a01720 (pid R=7f4a56a00000 d=1718 1720 1728 1730 1738 1740 1748 1750 1758 1760 1768 1770 | R=7f4a56c00000 d=1718 1720 1728 1730 1738 1740 1748 1750 1758 1760 1768 1770 | R=7f4a57200000 d=5d62d 5d635 5d63d 5d645)
+    OBJ=0x7f4a56a01908 (value-off 488, nib=8 refc=1)
+    aim tile OK: BOFF=488 OBJ=0x7f4a56a01908
+    sacrifice (ERR) b'<urlopen error [Errno 32] Broken pipe>'
+  [f] fire0 (9210000): ERR (crash/broken)
+  [f] fire8 (9210032): ERR (crash/broken)
+    hammer done: 2 non-200 of 12; /tmp/x absent
+[restore]
+    restored: SAPI=apache2handler lim=8388608 vars=100000

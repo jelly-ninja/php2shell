@@ -1,0 +1,31 @@
+=== oom133: warm-value sea arm ===
+md5 ok
+shaped segv=3
+base=0x7ff4a9f65000
+pre x: NO_X
+--- r1 (B=None OFF=None) ---
+r1-meas try0: http=200 segv+0 core=False x=NO_X
+r1-meas try1: http=200 segv+0 core=False x=NO_X
+r1-meas try2: http=200 segv+0 core=False x=NO_X
+r1-meas try3: http=200 segv+0 core=False x=NO_X
+r1-meas no crash in 4 tries
+--- r2 (B=None OFF=None) ---
+r2-meas try0: http=200 segv+0 core=False x=NO_X
+r2-meas try1: http=200 segv+0 core=False x=NO_X
+r2-meas try2: http=200 segv+0 core=False x=NO_X
+r2-meas try3: http=200 segv+0 core=False x=NO_X
+r2-meas no crash in 4 tries
+--- r3 (B=None OFF=None) ---
+r3-meas try0: http=200 segv+0 core=False x=NO_X
+r3-meas try1: http=-1 segv+0 core=False x=NO_X
+r3-meas try2: http=200 segv+0 core=False x=NO_X
+r3-meas try3: http=200 segv+0 core=False x=NO_X
+r3-meas no crash in 4 tries
+--- r4 (B=None OFF=None) ---
+r4-meas try0: http=200 segv+0 core=False x=NO_X
+r4-meas try1: http=200 segv+0 core=False x=NO_X
+r4-meas try2: http=200 segv+0 core=False x=NO_X
+r4-meas try3: http=200 segv+0 core=False x=NO_X
+r4-meas no crash in 4 tries
+final x: NO_X
+=== done ===

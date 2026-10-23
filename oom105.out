@@ -1,0 +1,9 @@
+    libphp=0x7f1b442ec000
+    copies=['0x7f1b4220166a', '0x7f1b42201712', '0x7f1b422017ba', '0x7f1b42201862', '0x7f1b4220190a', '0x7f1b422019b2']
+    V=0x7f1b4220166a OBJ=0x7f1b42201908 BOFF=670 grid=6
+    plant: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+    fire0: 200
+    fire1: 200
+    fire2: 200
+    fire3: 200
+done; /tmp/x=cat: /tmp/x: No such file or directory

@@ -1,0 +1,20 @@
+=== oom134 control: stock / name-sea / value-sea ===
+md5 ok
+shaped segv=3
+lens: stock=13590311 namesea=13590311 valuesea=13591591
+--- A: stock ---
+A-stock try0: http=-1 segv+1 core=True
+A rdi: rdi            0x4b4b4b4b4b4b4b4b  5425512962855750475
+rip            0x7f761bfb5e7b      0x7f761bfb5e7b <zend_array_destroy+539>
+--- B: name-sea ---
+B-nsea try0: http=200 segv+0 core=False
+B-nsea try1: http=200 segv+0 core=False
+B-nsea try2: http=-1 segv+1 core=True
+B rdi: rdi            0xe2c0de51e2c0df51  -2107440182331383983
+rip            0x7f761bfb5e7b      0x7f761bfb5e7b <zend_array_destroy+539> phase=7
+--- C: value-sea ---
+C-vsea try0: http=200 segv+0 core=False
+C-vsea try1: http=200 segv+0 core=False
+C-vsea try2: http=200 segv+0 core=False
+C: NO CRASH (value-sea suppresses)
+=== done ===

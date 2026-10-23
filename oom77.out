@@ -1,0 +1,19 @@
+=== oom77: triple-aim (slots (0, 32, 88)), one boot ===
+    libphp base = 0x7f9446cfb000
+[1] CAL warm (11)
+  cal-fire0: 200
+  cal-fire1: ERR
+    rdi=4141414141410000 phi=0 VA0=0x7f9444601718
+    rc-check: True (0100000008010000)
+[2] AIM warm (11), target=0x7f9444602520 free_obj=0x7f94470968a0
+[3] AIM sacrifice + finishers
+  aim-fire0: 200
+    /tmp/x: not yet
+  aim-fire1: 200
+    /tmp/x: not yet
+  aim-fire2: 200
+    /tmp/x: not yet
+  aim-fire3: 200
+    /tmp/x: not yet
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

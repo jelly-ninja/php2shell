@@ -1,0 +1,7 @@
+=== oom111: walk-footprint diff ===
+markers: []
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom111.py", line 138, in <module>
+    b0 = offs[0] - 0x40  # align block start near first marker
+         ~~~~^^^
+IndexError: list index out of range

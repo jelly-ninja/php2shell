@@ -1,0 +1,20 @@
+=== oom132: cut-adjacent name-sea arm ===
+md5 ok
+shaped segv=3
+base=0x7f98cc14b000
+pre x: NO_X
+m=12.52MB delta=-457616
+--- r1 (B=None OFF=None) ---
+r1-meas try0: http=200 segv+0 core=False
+r1-meas try1: http=-1 segv+1 core=True
+r1-meas x: NO_X
+r1-meas gdb: rdi            0xe2c0de51e2c0de51  -2107440182331384239
+rbx            0x7f98c9904e80      140294193434240
+rip            0x7f98cc4cae7b      0x7f98cc4cae7b <zend_array_destroy+539>
+census: maxidx=1012 tag=0x7f98c9724318 sig8hits=287950
+ARM aim from tag: B=0x7f98c9724508 OFF=496
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom132.py", line 264, in <module>
+    assert abs(len(a_body) - len(m_body)) <= 8, "envelope drift %d" % (len(a_body) - len(m_body))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: envelope drift 457616

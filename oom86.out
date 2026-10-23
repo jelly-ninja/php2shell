@@ -1,0 +1,14 @@
+=== oom86: T[32] -> next copy's object header ===
+    libphp=0x7fc7487c9000 heap=0x7fc746c00000 VA0=0x7fc746c01718 TARGET=0x7fc746c02520
+    T[32]=0x7fc746c02520 (next copy header), free_obj=0x7fc748b648a0
+[1] warm (11)
+[2] sacrifice@9200000 + finishers@9210000+4i
+  fire0 (9210000): 200 [fatal]
+  fire1 (9210004): 200 [fatal]
+  fire2 (9210008): 200 [fatal]
+  fire3 (9210012): 200 [fatal]
+  fire4 (9210016): 200 [fatal]
+  fire5 (9210020): 200 [fatal]
+[RESULT] no RCE this boot
+[3] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

@@ -1,0 +1,6 @@
+k1=2047 prep=1 rc=255 arda2=0x7f601a744000 coll=False lastelem=4029 death=True
+  poison: 7f601a7bc000
+  pre-resize tail: 163791 ret=0x7f601a76c000 | 163785 ret=0x7f601a794000 | 163784 ret=0x7f601a76c000 | 163808 ret=0x7f601a7bc000 | 40960 ret=0x7f601a7e4000 | 4096 ret=0x7f601b063000
+k1=2046 prep=2 rc=255 arda2=0x7fac57743000 coll=False lastelem=3991 death=True
+  poison: 7fac57401000,7fac577bb000
+  pre-resize tail: 81920 ret=0x7fac57743000 | 163791 ret=0x7fac5776b000 | 163785 ret=0x7fac57793000 | 163784 ret=0x7fac5776b000 | 163808 ret=0x7fac57401000 | 4096 ret=0x7fac57e63000

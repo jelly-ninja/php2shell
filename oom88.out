@@ -1,0 +1,21 @@
+=== oom88: AIM-arm window map (unique markers all slots) ===
+    libphp=0x7f1ccdf9b000
+[1] warm (11)
+[2] sacrifice@9200000 + finishers@9210000+4i (x8)
+  fire0 (9210000): ERR [crash]
+    rdi=0x5a5a5a5a5a5a5a01 -> slot=? valid=False
+  fire1 (9210004): ERR [crash]
+    rdi=0x5a5a5a5a5a5a5a01 -> slot=? valid=False
+  fire2 (9210008): ERR [crash]
+    rdi=0x5a5a5a5a5a5a5a01 -> slot=? valid=False
+  fire3 (9210012): ERR [crash]
+    rdi=0x5a5a5a5a5a5a5a01 -> slot=? valid=False
+  fire4 (9210016): ERR [crash]
+    rdi=0x5a5a5a5a5a5a5a01 -> slot=? valid=False
+  fire5 (9210020): ERR [crash]
+    rdi=0x5a5a5a5a5a5a5a01 -> slot=? valid=False
+  fire6 (9210024): 200 [fatal]
+  fire7 (9210028): 200 [fatal]
+[MAP] crashes at slots: []
+[3] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

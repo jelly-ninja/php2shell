@@ -1,0 +1,8 @@
+=== oom87: measure AIM arm from core, then aim ===
+    libphp=0x7f62378b4000 heap=0x7f6235bf6000 VA0(guess)=0x7f6235bf7718
+[1] AIM warm (11)
+[2] AIM sacrifice@9200000 -> core
+  sac-fire0: 200
+  sac-fire1: 200
+  sac-fire2: 200
+[ABORT] no sacrifice crash to measure

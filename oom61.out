@@ -1,0 +1,20 @@
+=== [0] verify stock + lab CONDITIONS only ===
+[md5] ce1f3c48ba22f8f17834ac791aead613 OK
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+[ulimit] #APACHE_ULIMIT_MAX_FILES='ulimit -n 65536'
+ulimit -c unlimited
+[attack] 13590263 bytes; baseline segv=57
+=== [1] 2 fires, same run ===
+  fire0: 200 segv+=0 cores=0
+  fire1: 200 segv+=0 cores=0
+=== [2] restart + 2 fires ===
+  rst0: 200 segv+=0 cores=0
+  rst1: 200 segv+=0 cores=0
+=== [3] core decode ===
+[cores] ls: cannot access '/tmp/core*': No such file or directory
+[no core] kernel core_pattern: core
+=== [4] restore full stock ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000
+=== [5] benign discriminator (30 requests) ===
+benign oks=30/30 segv+=0
+=== DONE ===

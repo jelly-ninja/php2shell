@@ -1,0 +1,17 @@
+[ini] (200, 'SAPI=apache2handler lim=20600000 vars=100000')
+[errlog-baseline] <<EXEC TIMEOUT>>
+[kids] ['145', '146', '147', '148', '149']
+[fire] attack 13590263 bytes x3
+  fire0: 200 0.7s body='<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 bytes exhausted (tri'
+    kids=['145', '146', '147', '148', '149', '165']
+  fire1: 200 0.7s body='<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 bytes exhausted (tri'
+    kids=['145', '146', '147', '148', '149', '165']
+  fire2: 200 0.5s body='<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 bytes exhausted (tri'
+    kids=['145', '146', '147', '148', '149', '165']
+[kids-after] ['145', '146', '147', '148', '149', '165']
+[kids-new] ['165'] [kids-gone] []
+[errlog]
+<<EXEC TIMEOUT>>
+[VERDICT] kids_changed=True segv_in_log=False
+[alive] (200, 'SAPI=apache2handler lim=20600000 vars=100000')
+[restored] (200, 'SAPI=apache2handler lim=128M vars=1000')

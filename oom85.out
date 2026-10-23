@@ -1,0 +1,10 @@
+=== oom85: distinguishable markers at 32/88, AIM flow ===
+    libphp=0x7f67a5323000 heap=0x7f67a3600000 VA0=0x7f67a3601718
+    tile: T[32]=0x222222222222 T[88]=0x888888888888 free_obj=0x7f67a56be8a0
+[1] warm (11)
+[2] sacrifice@9200000 + finishers@9210000+4i
+  fire0 (9210000): ERR [crash]
+    crash rdi=0x222222222222 rip=0x7f67a57bee55
+[VERDICT] WALK SLOT = 32 (aim there next)
+[3] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

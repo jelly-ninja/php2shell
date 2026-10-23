@@ -1,0 +1,12 @@
+=== oom113: diff the walk footprint ===
+fat-m: (200) True
+b0v=0x7f1b41e01718 stride=3584 copies=6
+OBJ=0x7f1b41e01908 copy=0 BOFF=496
+fat-aim: Fatal=True
+readback: rc=1 ti=0x108
+pre: 1/38 readable
+fire: Fatal=True
+changed qwords: 0
+NO CHANGES -> teardown never touched the block region
+x: ls: cannot access '/tmp/x': No such file or directory
+ls: cannot access '/tmp/core': No such file or directory

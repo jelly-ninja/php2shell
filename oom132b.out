@@ -1,0 +1,20 @@
+=== oom132: cut-adjacent name-sea arm ===
+md5 ok
+shaped segv=3
+base=0x7f9f1e750000
+pre x: NO_X
+m=12.96MB delta=-3
+--- r1 (B=None OFF=None) ---
+r1-meas try0: http=200 segv+0 core=False
+r1-meas try1: http=-1 segv+1 core=True
+r1-meas x: NO_X
+r1-meas gdb: rdi            0xe2c0de51e2c0df51  -2107440182331383983
+rbx            0x7f9f1befbb80      140321345223552
+rip            0x7f9f1eacfe7b      0x7f9f1eacfe7b <zend_array_destroy+539>
+census: maxidx=699 tag=0x7f9f1bdb7008 sig8hits=65355
+nulprobe: contig=0 post=0 -> NULs survive names: False
+phase q=7
+ARM aim from tag: B=0x7f9f1bdb7108 OFF=256
+ARM ABORTED: names truncate at NUL -> pivot to warm-value sea
+final x: NO_X
+=== done ===

@@ -1,0 +1,16 @@
+=== oom120diag: slot-allocation map for 6 same-shaped marker posts ===
+md5 ok; shaping (98-era, no crash needed)
+post0: 200 real=[] all=[('0x7fc46f8561d8', '0000000000000000')]
+post1: 200 real=[] all=[('0x7fc46f8561a0', '0000000000000000')]
+post2: -1 real=[] all=[('0x7fc46f8561a0', '0000000000000000')]
+post3: 200 real=[] all=[('0x7fc46f8561a0', '0000000000000000')]
+post4: 200 real=[] all=[('0x7fc46f8561a0', '0000000000000000')]
+post5: 200 real=[] all=[('0x7fc46f8561a0', '0000000000000000')]
+--- repeat sweep ---
+rep0: 200 real=[]
+rep1: 200 real=[]
+rep2: 200 real=[]
+rep3: 200 real=[]
+rep4: 200 real=[]
+rep5: 200 real=[]
+=== done ===

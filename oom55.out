@@ -1,0 +1,10 @@
+=== setup ===
+[lib] ce1f3c48 (stock expected)
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+=== fire ===
+  atk0: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 '
+    segv_total=29
+[fired] crashed_seen=True
+=== core hunt ===
+(no core listing)
+[NO CORE] pattern: core

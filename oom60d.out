@@ -1,0 +1,24 @@
+=== [0] lab env + w2 swap + CORE CAPTURE ON ===
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+[baseline] segv=46 w2dtor=32
+[attack] 13590263 bytes
+=== [1] 6 fires ===
+  fire0: RemoteDisconnected segv+=1 w2dtor+=2 stamped=0
+  fire1: ConnectionResetError segv+=1 w2dtor+=2 stamped=0
+  fire2: RemoteDisconnected segv+=1 w2dtor+=2 stamped=0
+  fire3: RemoteDisconnected segv+=1 w2dtor+=2 stamped=0
+  fire4: RemoteDisconnected segv+=1 w2dtor+=2 stamped=0
+  fire5: ConnectionResetError segv+=1 w2dtor+=2 stamped=0
+=== [2] restart + 3 fires ===
+  rst0: RemoteDisconnected segv+=1 w2dtor+=2 stamped=0
+  rst1: ConnectionResetError segv+=1 w2dtor+=2 stamped=0
+  rst2: RemoteDisconnected segv+=1 w2dtor+=2 stamped=0
+=== [3] stability ===
+fires-with-stamped-slot=0 distinct arData=0 distinct at=0 distinct stamp=0
+ arData: []
+ at    : []
+ stamps: []
+=== [4] core decode ===
+[cores] 
+=== [5] restore stock ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000

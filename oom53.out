@@ -1,0 +1,139 @@
+=== swap in instrumented libphp ===
+php_vuln
+total 20944
+drwxr-xr-x 1 root root     4096 Oct 21 00:35 .
+drwxr-xr-x 1 root root     4096 Oct 21 00:24 ..
+-rw-r--r-- 1 root root    17592 Oct  1 16:54 httpd.exp
+-rw-r--r-- 1 root root 16938000 Oct 21 00:35 libphp.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_access_compat.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_actions.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_alias.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_allowmethods.so
+-rw-r--r-- 1 root root    14464 Oct  1 16:54 mod_asis.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_auth_basic.so
+-rw-r--r-- 1 root root    35024 Oct  1 16:54 mod_auth_digest.so
+-rw-r--r-- 1 root root    30928 Oct  1 16:54 mod_auth_form.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authn_anon.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authn_core.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authn_dbd.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authn_dbm.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authn_file.so
+-rw-r--r-- 1 root root    26864 Oct  1 16:54 mod_authn_socache.so
+-rw-r--r-- 1 root root    35024 Oct  1 16:54 mod_authnz_fcgi.so
+-rw-r--r-- 1 root root    59624 Oct  1 16:54 mod_authnz_ldap.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_authz_core.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authz_dbd.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authz_dbm.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authz_groupfile.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authz_host.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authz_owner.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_authz_user.so
+-rw-r--r-- 1 root root    39120 Oct  1 16:54 mod_autoindex.so
+-rw-r--r-- 1 root root    22736 Oct  1 16:54 mod_brotli.so
+-rw-r--r-- 1 root root    14464 Oct  1 16:54 mod_bucketeer.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_buffer.so
+-rw-r--r-- 1 root root    75984 Oct  1 16:54 mod_cache.so
+-rw-r--r-- 1 root root    35024 Oct  1 16:54 mod_cache_disk.so
+-rw-r--r-- 1 root root    39152 Oct  1 16:54 mod_cache_socache.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_case_filter.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_case_filter_in.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_cern_meta.so
+-rw-r--r-- 1 root root    30928 Oct  1 16:54 mod_cgi.so
+-rw-r--r-- 1 root root    43216 Oct  1 16:54 mod_cgid.so
+-rw-r--r-- 1 root root    22736 Oct  1 16:54 mod_charset_lite.so
+-rw-r--r-- 1 root root    14464 Oct  1 16:54 mod_data.so
+-rw-r--r-- 1 root root   116944 Oct  1 16:54 mod_dav.so
+-rw-r--r-- 1 root root    59600 Oct  1 16:54 mod_dav_fs.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_dav_lock.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_dbd.so
+-rw-r--r-- 1 root root    39120 Oct  1 16:54 mod_deflate.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_dialup.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_dir.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_dumpio.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_echo.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_env.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_expires.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_ext_filter.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_file_cache.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_filter.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_headers.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_heartbeat.so
+-rw-r--r-- 1 root root    30928 Oct  1 16:54 mod_heartmonitor.so
+-rw-r--r-- 1 root root   282400 Oct  1 16:54 mod_http2.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_ident.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_imagemap.so
+-rw-r--r-- 1 root root    55504 Oct  1 16:54 mod_include.so
+-rw-r--r-- 1 root root    30928 Oct  1 16:54 mod_info.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_lbmethod_bybusyness.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_lbmethod_byrequests.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_lbmethod_bytraffic.so
+-rw-r--r-- 1 root root    22736 Oct  1 16:54 mod_lbmethod_heartbeat.so
+-rw-r--r-- 1 root root    84176 Oct  1 16:54 mod_ldap.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_log_debug.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_log_forensic.so
+-rw-r--r-- 1 root root   137424 Oct  1 16:54 mod_lua.so
+-rw-r--r-- 1 root root    22736 Oct  1 16:54 mod_macro.so
+-rw-r--r-- 1 root root   359224 Oct  1 16:54 mod_md.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_mime.so
+-rw-r--r-- 1 root root    30928 Oct  1 16:54 mod_mime_magic.so
+-rw-r--r-- 1 root root    75984 Oct  1 16:54 mod_mpm_event.so
+-rw-r--r-- 1 root root    35024 Oct  1 16:54 mod_mpm_prefork.so
+-rw-r--r-- 1 root root    47312 Oct  1 16:54 mod_mpm_worker.so
+-rw-r--r-- 1 root root    39120 Oct  1 16:54 mod_negotiation.so
+-rw-r--r-- 1 root root   166752 Oct  1 16:54 mod_proxy.so
+-rw-r--r-- 1 root root    63696 Oct  1 16:54 mod_proxy_ajp.so
+-rw-r--r-- 1 root root    67792 Oct  1 16:54 mod_proxy_balancer.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_proxy_connect.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_proxy_express.so
+-rw-r--r-- 1 root root    35024 Oct  1 16:54 mod_proxy_fcgi.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_proxy_fdpass.so
+-rw-r--r-- 1 root root    43216 Oct  1 16:54 mod_proxy_ftp.so
+-rw-r--r-- 1 root root    35024 Oct  1 16:54 mod_proxy_hcheck.so
+-rw-r--r-- 1 root root    35024 Oct  1 16:54 mod_proxy_html.so
+-rw-r--r-- 1 root root    47312 Oct  1 16:54 mod_proxy_http.so
+-rw-r--r-- 1 root root    67936 Oct  1 16:54 mod_proxy_http2.so
+-rw-r--r-- 1 root root    22768 Oct  1 16:54 mod_proxy_scgi.so
+-rw-r--r-- 1 root root    22736 Oct  1 16:54 mod_proxy_uwsgi.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_proxy_wstunnel.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_ratelimit.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_reflector.so
+-rw-r--r-- 1 root root    30928 Oct  1 16:54 mod_remoteip.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_reqtimeout.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_request.so
+-rw-r--r-- 1 root root    84176 Oct  1 16:54 mod_rewrite.so
+-rw-r--r-- 1 root root    43216 Oct  1 16:54 mod_sed.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_session.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_session_cookie.so
+-rw-r--r-- 1 root root    30928 Oct  1 16:54 mod_session_crypto.so
+-rw-r--r-- 1 root root    22736 Oct  1 16:54 mod_session_dbd.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_setenvif.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_slotmem_plain.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_slotmem_shm.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_socache_dbm.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_socache_memcache.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_socache_redis.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_socache_shmcb.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_speling.so
+-rw-r--r-- 1 root root   264432 Oct  1 16:54 mod_ssl.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_status.so
+-rw-r--r-- 1 root root    18640 Oct  1 16:54 mod_substitute.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_suexec.so
+-rw-r--r-- 1 root root    14464 Oct  1 16:54 mod_unique_id.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_userdir.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_usertrack.so
+-rw-r--r-- 1 root root    14544 Oct  1 16:54 mod_vhost_alias.so
+-rw-r--r-- 1 root root    26832 Oct  1 16:54 mod_xml2enc.so
+backed-up
+-rwxr-xr-x 1 501 root 25590984 Oct 22 14:09 /usr/lib/apache2/modules/libphp.so
+[ini] (200, 'SAPI=apache2handler lim=128M vars=1000')
+[mark] error.log truncated
+[attack] 13590263 bytes x3
+  atk0: 200 '<br />\n<b>Warning</b>:  POST Content-Length of 13590263 bytes exceeds '
+  atk1: 200 '<br />\n<b>Warning</b>:  POST Content-Length of 13590263 bytes exceeds '
+  atk2: 200 '<br />\n<b>Warning</b>:  POST Content-Length of 13590263 bytes exceeds '
+=== census ===
+<<EXEC TIMEOUT>>
+[VERDICT] census unparsable
+=== restore stock ===
+php_vuln
+[restored] (200, 'SAPI=apache2handler lim=128M vars=1000')

@@ -1,0 +1,36 @@
+=== oom128: name-sea arm ===
+md5 ok
+shaped segv=3
+base=0x7fa8272c5000
+pre x: NO_X
+--- r1 (B=None OFF=None) m=12.96MB a=None ---
+r1-meas try0: http=200 segv+0 core=False
+r1-meas try1: http=-1 segv+0 core=False
+r1-meas try2: http=200 segv+0 core=False
+r1-meas try3: http=-1 segv+0 core=False
+r1-meas x: NO_X
+r1-meas no crash - reshaping
+--- r2 (B=None OFF=None) m=12.96MB a=None ---
+r2-meas try0: http=200 segv+0 core=False
+r2-meas try1: http=200 segv+0 core=False
+r2-meas try2: http=200 segv+0 core=False
+r2-meas try3: http=200 segv+0 core=False
+r2-meas x: NO_X
+r2-meas no crash - reshaping
+--- r3 (B=None OFF=None) m=12.96MB a=None ---
+r3-meas try0: http=-1 segv+1 core=True
+r3-meas x: NO_X
+r3-meas gdb: rdi            0x4b4b4b4b4b4b4b4b  5425512962855750475
+rbx            0x7fa824f03be0      140360150957024
+rip            0x7fa827644e7b      0x7fa827644e7b <zend_array_destroy+539>
+tags: 0 {}
+BLOCK_PART 2400 untagged
+--- r4 (B=None OFF=None) m=12.96MB a=None ---
+r4-meas try0: http=200 segv+0 core=False
+r4-meas try1: http=200 segv+0 core=False
+r4-meas try2: http=200 segv+0 core=False
+r4-meas try3: http=200 segv+0 core=False
+r4-meas x: NO_X
+r4-meas no crash - reshaping
+final x: NO_X
+=== done ===

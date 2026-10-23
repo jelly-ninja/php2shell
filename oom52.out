@@ -1,0 +1,18 @@
+[ini] (200, 'SAPI=apache2handler lim=20600000 vars=100000')
+[kids] ['240', '241', '242', '243', '244']
+[attack] 13590263 bytes
+  atk0: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 bytes exha'
+  atk1: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 bytes exha'
+  atk2: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 20600000 bytes exha'
+[kids-mid] ['240', '241', '242', '243', '244', '252'] gone: []
+[benign barrage x30]
+  ..10 done bad=0
+  ..20 done bad=0
+  ..30 done bad=0
+[kids-after] ['240', '241', '242', '243', '244', '252']
+[kids-new] ['252'] [kids-gone] []
+[errlog-relevant]
+<<EXEC TIMEOUT>>
+[alive] (200, 'SAPI=apache2handler lim=20600000 vars=100000')
+[VERDICT] benign_failures=0 kids_gone=[]
+[restored] (200, 'SAPI=apache2handler lim=128M vars=1000')

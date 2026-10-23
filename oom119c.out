@@ -1,0 +1,13 @@
+=== oom119c: deterministic-reuse arm ===
+md5=ce1f3c48
+shape done segv+3
+base=0x7f7e97023000
+off=0x8 probe: B=0x7f7e952561a0 legal=False hits=1
+off=0x18 probe: B=0x7f7e952561a0 legal=False hits=1
+off=0x28 probe: B=0x7f7e952561a0 legal=False hits=1
+off=0x38 probe: B=0x7f7e952561a0 legal=False hits=1
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom119c.py", line 207, in <module>
+    assert B, "no legal B measured"
+           ^
+AssertionError: no legal B measured

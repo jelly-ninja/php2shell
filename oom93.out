@@ -1,0 +1,10 @@
+=== oom93: measure (A) then shoot (B) ===
+    libphp=0x140552382791680 heap=0x7fd4e5200000 guessVA0=0x7fd4e5201718
+  [A] fire0 (9210000): 200 [fatal]
+  [A] fire1 (9210004): 200 [fatal]
+  [A] fire2 (9210008): 200 [fatal]
+    boot A silent — trying guess in boot B anyway
+  [B] fire0 (9210000): ERR [crash]
+    B crash rdi=0x7fd4e52017c8 rip=0x7f89b759ce7b (/tmp/c93_B0)
+[restore]
+    restored: SAPI=apache2handler lim=8M vars=100000

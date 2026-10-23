@@ -1,0 +1,15 @@
+live BASE=0x7f3be24ae000 (7f3be24ae000-7f3be25ca000 r--p 00000000 fe:01 3703404                    /usr/lib/apache2/modules/libphp.so)
+=== oom141h arm: B=0x7f3be08681b8 k=96 VLEN=295 N=3500000 ===
+wire len: 3500306
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3500032 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=3500032 delta_vs_N=+32 <-- KEY-ALLOC FATAL (DV point)
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3500032 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=3500032 delta_vs_N=+32 <-- KEY-ALLOC FATAL (DV point)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3500032 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=3500032 delta_vs_N=+32 <-- KEY-ALLOC FATAL (DV point)
+arm done, no x after 3 tries
+final x: X_EXISTS:www-data
+=== done ===

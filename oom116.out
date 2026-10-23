@@ -1,0 +1,11 @@
+=== oom116: self-typing run, same-request dispatch ===
+base=0x7f1b44408000
+C0=0x7f1b41e01718 (stride check: ['0x18', '0x30', '0x48'])
+B=0x7f1b41e0d108 (part 13 value +0x3f0) bits: nib8=8 bit8=1 bit9=0
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom116.py", line 183, in <module>
+    blk_tile = make_block_tile(B, OFF)
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom116.py", line 111, in make_block_tile
+    st("<II", t, off + 0x00, 1, 0x108)      # rc, ti
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+struct.error: pack expected 2 items for packing (got 4)

@@ -1,0 +1,15 @@
+=== oom92: one clean shot per boot ===
+    libphp=0x7fb396434000 VA0=0x7fb3947f7718 OBJ=0x7fb3947f77c8 (ti nibble=8 refc=1)
+    zval-ti@slot = 0x947f77c8 -> type=8 refcounted=1
+  [b0] fire0 (9210000): 200 [fatal]
+  [b0] fire1 (9210004): 200 [fatal]
+  [b0] fire2 (9210008): 200 [fatal]
+  [b0] fire3 (9210012): 200 [fatal]
+    silent boot — one restart, one more shot
+  [b1] fire0 (9210000): 200 [fatal]
+  [b1] fire1 (9210004): 200 [fatal]
+  [b1] fire2 (9210008): 200 [fatal]
+  [b1] fire3 (9210012): 200 [fatal]
+    second boot silent
+[restore]
+    restored: SAPI=apache2handler lim=8M vars=100000

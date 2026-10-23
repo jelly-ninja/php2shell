@@ -1,0 +1,30 @@
+=== boot 0 ===
+    libphp=0x7f8fd2c1a000 heap=0x55f9888d0000 VA0=0x55f9888d1718 OBJ=0x55f9888d17c8
+    zval-ti@S = 0x888d17d0 -> type=0 refc=1
+  [b0] fire0 (9210000): 200 [fatal]
+  [b0] fire1 (9210004): 200 [fatal]
+  [b0] fire2 (9210008): 200 [fatal]
+    silent boot (dud arm churn ~25%%) — reboot and retry
+=== boot 1 ===
+    libphp=0x7fa22e75f000 heap=0x5646214d5000 VA0=0x5646214d6718 OBJ=0x5646214d67c8
+    zval-ti@S = 0x214d67d0 -> type=0 refc=1
+  [b1] fire0 (9210000): 200 [fatal]
+  [b1] fire1 (9210004): 200 [fatal]
+  [b1] fire2 (9210008): 200 [fatal]
+    silent boot (dud arm churn ~25%%) — reboot and retry
+=== boot 2 ===
+    libphp=0x7efcd77cd000 heap=0x5604617bf000 VA0=0x5604617c0718 OBJ=0x5604617c07c8
+    zval-ti@S = 0x617c07d0 -> type=0 refc=1
+  [b2] fire0 (9210000): 200 [fatal]
+  [b2] fire1 (9210004): 200 [fatal]
+  [b2] fire2 (9210008): 200 [fatal]
+    silent boot (dud arm churn ~25%%) — reboot and retry
+=== boot 3 ===
+    libphp=0x7fe2e79c0000 heap=0x55595663a000 VA0=0x55595663b718 OBJ=0x55595663b7c8
+    zval-ti@S = 0x5663b7d0 -> type=0 refc=1
+  [b3] fire0 (9210000): 200 [fatal]
+  [b3] fire1 (9210004): 200 [fatal]
+  [b3] fire2 (9210008): 200 [fatal]
+    silent boot (dud arm churn ~25%%) — reboot and retry
+[restore]
+    restored: SAPI=apache2handler lim=8M vars=100000

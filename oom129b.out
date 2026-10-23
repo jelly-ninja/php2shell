@@ -1,0 +1,10 @@
+=== oom129: tagged-value measure + name-sea arm ===
+md5 ok
+shaped segv=3
+base=0x7f2bc6e55000
+pre x: NO_X
+m=19.11MB
+--- r1 (B=None OFF=None map_age=100) ---
+r1-meas try0: http=200 segv+0 core=False
+r1-meas try1: http=200 segv+0 core=False
+r1-meas try2: http=200 segv+0 core=False

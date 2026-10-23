@@ -1,0 +1,21 @@
+[0] stock md5 + core env
+    ready — ALL fires patterned with 414141414141
+[1] warm (patterned)
+    warm done
+[2] sacrifice + finishers (patterned), decode rdi per crash
+  fire0: URLError '<urlopen error [Errno 32] Broken pipe>'
+#0  0x00007fd4048e2e7b in zend_array_destroy () from /usr/lib/apache2/modules/libphp.so
+#0  0x00007fd4048e2e7b in zend_array_destroy () from /usr/lib/apache2/modules/libphp.so
+rdi            0x7a7a414141414141  8825438168309383489
+  fire1: URLError '<urlopen error [Errno 32] Broken pipe>'
+#0  0x00007fd4048e2e7b in zend_array_destroy () from /usr/lib/apache2/modules/libphp.so
+#0  0x00007fd4048e2e7b in zend_array_destroy () from /usr/lib/apache2/modules/libphp.so
+rdi            0x7a7a414141414141  8825438168309383489
+  fire2: URLError '<urlopen error [Errno 32] Broken pipe>'
+#0  0x00007fd4048e2e7b in zend_array_destroy () from /usr/lib/apache2/modules/libphp.so
+#0  0x00007fd4048e2e7b in zend_array_destroy () from /usr/lib/apache2/modules/libphp.so
+rdi            0x7a7a414141414141  8825438168309383489
+  fire3: 200 '<br />\n<b>Fatal error</b>:  Allowed memo'
+    (survivor)
+[3] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

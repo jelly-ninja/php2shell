@@ -1,0 +1,13 @@
+=== oom111: walk-footprint diff ===
+markers: ['0x7f1b426561a0', '0x7f1b42668450', '0x7f1b42668b68', '0x7f1b42669968']
+b0=0x7f1b42656160
+OBJ=0x7f1b42656508 BOFF=936
+aim body: 13590311 bytes
+aim: (200) 'SAPI=apache2handler lim=8388608 vars=100000'
+post-aim markers: ['0x7f1b426561a0', '0x7f1b42668450', '0x7f1b42668b68', '0x7f1b42669968']
+block_va=0x0 (target OBJ=0x7f1b42656508)
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom111.py", line 198, in <module>
+    d = probe_read(block_va + off, 8)
+                   ~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'

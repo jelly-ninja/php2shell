@@ -1,0 +1,12 @@
+=== oom139: paired-ring arm ===
+sapi: SAPI=apache2handler lim=8388608 vars=100000
+md5 ok
+base=0x7f48f29a6000
+measure body=13099173
+meas t0: http=200 segv+0 NO_X
+meas t1: http=200 segv+0 NO_X
+meas t2: http=200 segv+0 NO_X
+meas t3: http=200 segv+0 NO_X
+no measure crash -> abort
+final x: NO_X
+=== done ===

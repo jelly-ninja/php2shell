@@ -1,0 +1,25 @@
+=== [0] drop-in identity check vs oom67 (benign mode) ===
+k1=3400 identical=True len=13590311
+k1=2044 identical=True len=13590311
+=== [1] survivor-alphabet self-check ===
+key filler len=3060 periodic-C chunks=191 ok
+=== [2] live fires: benign 2, then weaponized 3 ===
+warm k1=1900: 200
+warm k1=1950: 200
+warm k1=2000: 200
+warm k1=2044: 200
+warm k1=2100: 200
+warm k1=2200: 200
+warm k1=2400: 200
+warm k1=2600: 200
+warm k1=2800: 200
+warm k1=3000: 200
+warm k1=3200: 200
+SACRIFICE: URLError
+benign-fire0: URLError
+benign-fire1: URLError
+wpn-fire0: 200 '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+wpn-fire1: URLError '<urlopen error [Errno 32] Broken pipe>'
+wpn-fire2: URLError '<urlopen error [Errno 32] Broken pipe>'
+segv delta=4
+=== done ===

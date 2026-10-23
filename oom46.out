@@ -1,0 +1,38 @@
+=== A) rebuild instrument ===
+Build complete.
+Don't forget to run 'make test'.
+
+
+=== B) tiny sanity on 8.2.34 instrumented ===
+('RC=0', 'X-Powered-By: PHP/8.2.34\r\nContent-type: text/html; charset=UTF-8\r\n\r\nPROBE n=5 peak=2097152\n---\nPROBE hash_destroy ht=0x55afecc17220 nNumUsed=0 static=0 holes=1 packed=0\nPROBE hash_destroy ht=0x55afecc171e0 nNumUsed=0 static=0 holes=1 packed=0\nPROBE hash_destroy ht=0x55afecc19f00 nNumUsed=3100 static=1 holes=1 packed=0\nPROBE hash_destroy ht=0x55afecc17120 nNumUsed=2 static=0 holes=1 packed=0')
+=== C) native kill shot ===
+rc: RC=255
+trace tail: 8.2.34
+Content-type: text/html; charset=UTF-8
+
+<br />
+<b>Fatal error</b>:  Allowed memory size of 20600000 bytes exhausted (tried to allocate 4096 bytes) in <b>Unknown</b> on line <b>0</b><br />
+---
+PROBE hash_destroy ht=0x56277c017260 nNumUsed=0 static=0 holes=1 packed=0
+PROBE hash_destroy ht=0x56277c017220 nNumUsed=0 static=0 holes=1 packed=0
+PROBE hash_destroy ht=0x56277c0171e0 nNumUsed=0 static=0 holes=1 packed=0
+PROBE hash_destroy ht=0x56277c019f00 nNumUsed=3100 static=1 holes=1 packed=0
+=== D) core forensics ===
+RC=255
+
+/tmp/core*: No such file or directory.
+/tmp/g.gdb:2: Error in sourced command file:
+No registers.
+
+=== E) 8.2.35 fixed ===
+tiny: RC=0
+attack@64M: RC=0 | out tail: X-Powered-By: PHP/8.2.35
+Content-type: text/plain;charset=UTF-8
+
+POSTCOUNT=4203---
+attack@20.6M: RC=255 | out tail: X-Powered-By: PHP/8.2.35
+Content-type: text/html; charset=UTF-8
+
+<br />
+<b>Fatal error</b>:  Allowed memory size of 20600000 bytes exhausted (tried to allocate 2097152 bytes) in <b>Unknown</b> on line <b>0</b><br />
+---

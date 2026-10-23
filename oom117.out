@@ -1,0 +1,10 @@
+=== oom117: two-corner bisect (C baseline / B values-reach) ===
+[preflight] md5=ce1f3c48 x=ls: cannot access '/tmp/x': No core=ls: cannot access '/tmp/core': No such file or directory
+base=0x0x7f1b44408000
+--- corner C: names stamps, values v (98-series replica) ---
+C body 12.96 MB -> /oom_mod.php
+C: code=200 resp='<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 4096 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+C core: ls: cannot access '/tmp/core': No such file or directory
+C VERDICT: crash=False rdi=None
+!!! baseline did NOT crash - env drift, aborting before corner B
+=== done (aborted) ===

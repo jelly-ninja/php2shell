@@ -1,0 +1,11 @@
+    libphp=0x7f1b442ec000
+-- cycle 0 --
+    fat-m: 200
+    markers=[]
+-- cycle 1 --
+    fat-m: 200
+    markers=[]
+-- cycle 2 --
+    fat-m: ERR
+    markers=[]
+done; /tmp/x=cat: /tmp/x: No such file or directory

@@ -1,0 +1,8 @@
+=== oom123: recycled-page arm ===
+md5 ok
+shaped segv=3
+base=0x7f861e6d0000
+slots: V1=None V2=None V3=None
+PHASE A: deterministic=False
+slots drift - need page-tile redesign (B||B across whole 3KB won't need slot identity; report)
+=== done ===

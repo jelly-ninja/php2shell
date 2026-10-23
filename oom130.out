@@ -1,0 +1,37 @@
+=== oom130: same-envelope tags + name-sea arm ===
+md5 ok
+shaped segv=3
+base=0x7f3337d5a000
+pre x: NO_X
+m=12.96MB verbatim=12.96MB delta=0
+--- r1 (B=None OFF=None map_age=100) ---
+r1-meas try0: http=200 segv+0 core=False
+r1-meas try1: http=200 segv+0 core=False
+r1-meas try2: http=200 segv+0 core=False
+r1-meas try3: http=200 segv+0 core=False
+r1-meas try4: http=-1 segv+0 core=False
+r1-meas x: NO_X
+--- r2 (B=None OFF=None map_age=101) ---
+r2-meas try0: http=-1 segv+1 core=True
+r2-meas x: NO_X
+r2-meas gdb: rdi            0x4b4b4b4b4b4b4b4b  5425512962855750475
+rbx            0x7f3335b03be0      139857920801760
+rip            0x7f33380d9e7b      0x7f33380d9e7b <zend_array_destroy+539>
+tags: 0 {}
+ARM aim: B=None OFF=None
+--- r3 (B=None OFF=None map_age=1) ---
+r3-meas try0: http=200 segv+0 core=False
+r3-meas try1: http=200 segv+0 core=False
+r3-meas try2: http=200 segv+0 core=False
+r3-meas try3: http=200 segv+0 core=False
+r3-meas try4: http=200 segv+0 core=False
+r3-meas x: NO_X
+--- r4 (B=None OFF=None map_age=2) ---
+r4-meas try0: http=-1 segv+1 core=True
+r4-meas x: NO_X
+r4-meas gdb: rdi            0x4b4b4b4b4b4b4b4b  5425512962855750475
+rbx            0x7f3335503be0      139857914510304
+rip            0x7f33380d9e7b      0x7f33380d9e7b <zend_array_destroy+539>
+tags: 0 {}
+ARM aim: B=None OFF=None
+--- r5 (B=None OFF=None map_age=1) ---

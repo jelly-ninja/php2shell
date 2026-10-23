@@ -1,0 +1,12 @@
+=== oom140b: paired-ring arm (retained-profile-faithful) ===
+sapi: SAPI=apache2handler lim=8388608 vars=100000
+md5 ok
+base=0x7f642dc6f000
+shaped segv=3
+envelope: pairs wire extra=2300837 absorbed by poison[0]
+try0: http=-1 segv+1 core=True
+core -> /tmp/core.140b dd7369feaa0b5b871d49901c9284acbe  /tmp/core.
+meas core: rdi=0x0 tag_A=0x7f642b550018
+no measure crash -> abort
+final x: NO_X
+=== done ===

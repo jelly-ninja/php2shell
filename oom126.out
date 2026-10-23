@@ -1,0 +1,25 @@
+=== oom126: body-seed arm ===
+md5 ok
+shaped segv=3
+base=0x7fda85c1c000
+pre-round x: NO_X
+--- round 1 (B=None part=None OFF=None) ---
+body 7.44 MB
+r1 try0: http=200 segv+0 core=False
+r1 try1: http=200 segv+0 core=False
+r1 x: NO_X
+r%d no crash - reshaping
+--- round 2 (B=None part=None OFF=None) ---
+body 7.44 MB
+r2 try0: http=200 segv+0 core=False
+r2 try1: http=200 segv+0 core=False
+r2 x: NO_X
+r%d no crash - reshaping
+--- round 3 (B=None part=None OFF=None) ---
+body 7.44 MB
+r3 try0: http=200 segv+0 core=False
+r3 try1: http=200 segv+0 core=False
+r3 x: NO_X
+r%d no crash - reshaping
+final x: NO_X
+=== done ===

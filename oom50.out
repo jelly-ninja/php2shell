@@ -1,0 +1,33 @@
+[ini] (200, 'SAPI=apache2handler lim=20600000 vars=100000')
+[tiny] (200, 'POSTCOUNT=1')
+[kids] ['82', '83', '84', '85', '86']
+[fire] attack 13590263 bytes x3
+  fire0: 200 0.6s body='<br />\n<b>Warning</b>:  POST Content-Length of 13590263 byte'
+  fire1: 200 0.4s body='<br />\n<b>Warning</b>:  POST Content-Length of 13590263 byte'
+  fire2: 200 0.5s body='<br />\n<b>Warning</b>:  POST Content-Length of 13590263 byte'
+[kids-after] ['82', '83', '84', '85', '86', '95']
+[kids-new] ['95'] [kids-gone] []
+[restored] (200, 'SAPI=apache2handler lim=128M vars=1000')
+Traceback (most recent call last):
+  File "/private/tmp/phplab/oom50.py", line 105, in <module>
+    main()
+    ~~~~^^
+  File "/private/tmp/phplab/oom50.py", line 93, in main
+    log = sh("tail -12 /var/log/apache2/error.log")
+  File "/private/tmp/phplab/oom50.py", line 37, in sh
+    r = subprocess.run(["docker", "exec", "php_vuln", "sh", "-c", cmd],
+                       capture_output=True, timeout=60)
+  File "/usr/local/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 558, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 2131, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1265, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['docker', 'exec', 'php_vuln', 'sh', '-c', 'tail -12 /var/log/apache2/error.log']' timed out after 60 seconds

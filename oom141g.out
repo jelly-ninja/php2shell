@@ -1,0 +1,15 @@
+=== oom141: datadog 3-field groom ===
+sapi: SAPI=apache2handler lim=16777216 vars=100000
+md5 ok
+sapi after recreate: SAPI=apache2handler lim=16777216 vars=100000
+base=0x7f3be25ca000
+--- VLEN=295 N=3500000 ---
+try0: http=-1 segv+1 core=True
+  body[:180]: 'ERR RemoteDisconnected'
+core -> /tmp/core.141 06c29651ed02c65364a436eec63a0322  /tmp/core.
+measure rdi=0x51e2c0de51e2c0de want=0x51e2c0de51e2c0de
+sig vaddrs: ['0x7f3']
+str_val candidates: []
+no aligned str_val -> abort
+final x: NO_X
+=== done ===

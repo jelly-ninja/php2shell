@@ -1,0 +1,17 @@
+    libphp=0x7f1b442ec000
+-- cycle 0 --
+    fat-m: 200
+    markers=['0x7f1b426561a0']
+    b0=0x7f1b42655d50 OBJ=0x7f1b42656108 BOFF=952
+    fat-aim: 200
+-- cycle 1 --
+    fat-m: 200
+    markers=['0x7f1b426561a0']
+    b0=0x7f1b42655d50 OBJ=0x7f1b42656108 BOFF=952
+    fat-aim: 200
+-- cycle 2 --
+    fat-m: 200
+    markers=['0x7f1b426561a0']
+    b0=0x7f1b42655d50 OBJ=0x7f1b42656108 BOFF=952
+    fat-aim: 200
+done; /tmp/x=cat: /tmp/x: No such file or directory

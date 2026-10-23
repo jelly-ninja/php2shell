@@ -1,0 +1,13 @@
+=== oom77: cal-arrange then aimed single fires ===
+    libphp base = 0x7fabaf72e000
+[1] CAL warm (11)
+  cal-fire0: 200
+  cal-fire1: ERR
+    rdi=4141414141410000 phi=0 VA0=0x7fabad001718
+    rc-check: True (0100000008010000)
+[2] AIM single fires (zone keeps CAL arrangement), target=0x7fabad002520 free_obj=0x7fabafac98a0
+  aim-fire0: ERR
+    /tmp/x: not yet
+    crash rdi=4141414141410000 phi=None (TARGET=202500adab7f0000)
+[3] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

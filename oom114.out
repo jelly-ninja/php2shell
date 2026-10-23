@@ -1,0 +1,7 @@
+=== oom114: names-walk + values-fields ===
+libphp base: N/A
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom114.py", line 134, in <module>
+    assert BASE
+           ^^^^
+AssertionError

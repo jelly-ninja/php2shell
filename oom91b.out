@@ -1,0 +1,18 @@
+=== oom91: corrected-model converge ===
+    libphp = 0x7f41915dd000
+[cycle 1] PROBE
+  [p0] fire0 (9210000): ERR [crash]
+    rdi=0x5a5a5a5a5a5a5a01 -> slot=8 VA0=0x7f418ee01718
+[cycle 2] AIM slot=8 P=0x7f418ee01730
+  [a1] fire0 (9210000): 200 [fatal]
+  [a1] fire1 (9210004): 200 [fatal]
+  [a1] fire2 (9210008): 200 [fatal]
+    no crash, no x — re-probing
+[cycle 3] PROBE
+  [p2] fire0 (9210000): 200 [fatal]
+  [p2] fire1 (9210004): 200 [fatal]
+  [p2] fire2 (9210008): 200 [fatal]
+    no crash, no x — re-probing
+[RESULT] S=None VA0=0x7f418ee01718
+[restore]
+    restored: SAPI=apache2handler lim=8M vars=100000

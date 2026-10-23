@@ -1,0 +1,27 @@
+=== [0] stock + lim=8M ===
+[ini] SAPI=apache2handler lim=8M vars=100000
+=== [1] 12 fires, same run ===
+  f00: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f01: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f02: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f03: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f04: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f05: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f06: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f07: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f08: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f09: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f10: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+  f11: 200       segv+=0 cores=0 crashed=False pids ['1', '18', '19'] -> ['1', '18', '19']
+=== [2] 5 benign ===
+  benign 5/5, segv+=0
+=== [3] restart + 6 fires ===
+  f20: 200       segv+=0 cores=0 crashed=False pids ['1', '17', '18'] -> ['1', '17', '18']
+  f21: 200       segv+=0 cores=0 crashed=False pids ['1', '17', '18'] -> ['1', '17', '18']
+  f22: 200       segv+=0 cores=0 crashed=False pids ['1', '17', '18'] -> ['1', '17', '18']
+  f23: 200       segv+=0 cores=0 crashed=False pids ['1', '17', '18'] -> ['1', '17', '18']
+  f24: 200       segv+=0 cores=0 crashed=False pids ['1', '17', '18'] -> ['1', '17', '18']
+  f25: 200       segv+=0 cores=0 crashed=False pids ['1', '17', '18'] -> ['1', '17', '18']
+=== RESULT: 0/18 fires crashed stock ===
+=== [4] restore ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000

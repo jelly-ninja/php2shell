@@ -1,0 +1,8 @@
+# Memory-dump artifacts and binaries — never publish
+child.core*
+core.*
+*.core
+libphp*.so*
+*.log
+__pycache__/
+.DS_Store

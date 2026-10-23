@@ -1,0 +1,7 @@
+    libphp=0x7f1b442ec000
+    probe: R=0x7f1b41e00000 offs=[139755046049386, 139755046049554, 139755046049722, 139755046049890]
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom99.py", line 126, in <module>
+    assert (V & 0xF) == 0 or (V & 0xF) == 8, "V alignment %d" % (V & 0xF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: V alignment 10

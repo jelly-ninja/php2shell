@@ -1,0 +1,8 @@
+=== swap ===
+php_vuln
+backed-up
+[ini] SAPI=apache2handler lim=128M vars=1000
+[ABORT] lab ini never became active
+=== restore ===
+php_vuln
+[restored] (200, 'SAPI=apache2handler lim=128M vars=1000')

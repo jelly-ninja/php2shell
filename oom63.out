@@ -1,0 +1,27 @@
+=== [0] stock + conditions ===
+[ini] SAPI=apache2handler lim=20600000 vars=100000
+[baseline] segv=57
+=== [A] poison-page sweep P=30..52 step2 ===
+  P=30(nl=122855): 200 segv+=0 oom+=0 cores=0
+  P=32(nl=131047): 200 segv+=0 oom+=0 cores=0
+  P=34(nl=139239): 200 segv+=0 oom+=0 cores=0
+  P=36(nl=147431): 200 segv+=0 oom+=0 cores=0
+  P=38(nl=155623): 200 segv+=0 oom+=0 cores=0
+  P=40(nl=163815): 200 segv+=0 oom+=0 cores=0
+  P=42(nl=172007): 200 segv+=0 oom+=0 cores=0
+  P=44(nl=180199): 200 segv+=0 oom+=0 cores=0
+  P=46(nl=188391): URLError segv+=0 oom+=0 cores=0
+  P=48(nl=196583): 200 segv+=0 oom+=0 cores=0
+  P=50(nl=204775): 200 segv+=0 oom+=0 cores=0
+  P=52(nl=212967): 200 segv+=0 oom+=0 cores=0
+=== [B] lead-in key sweep k1 ===
+  k1=1024: 200 segv+=0 oom+=0 cores=0
+  k1=1536: 200 segv+=0 oom+=0 cores=0
+  k1=2304: 200 segv+=0 oom+=0 cores=0
+  k1=2560: 200 segv+=0 oom+=0 cores=0
+  k1=3072: URLError segv+=0 oom+=0 cores=0
+  k1=3584: 200 segv+=0 oom+=0 cores=0
+=== [2] hit=None ===
+=== [3] restore ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000
+=== DONE hit=None ===

@@ -1,0 +1,9 @@
+=== oom116: self-typing run, same-request dispatch ===
+base=0x7f1b44408000
+C0=0x7f1b41e01718 (stride check: ['0x18', '0x30', '0x48'])
+B=0x7f1b41e0d108 (part 13 value +0x3f0) bits: nib8=8 bit8=1 bit9=0
+armed body 12.96 MB
+armed: code=200 resp='<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 28672 bytes) in <b>Unknown'
+x/core: cat: /tmp/x: No such file or directory
+ls: cannot access '/tmp/core': No such file or directory
+=== done ===

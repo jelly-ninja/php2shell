@@ -1,0 +1,87 @@
+=== oom141: datadog 3-field groom ===
+sapi: SAPI=apache2handler lim=8388608 vars=100000
+md5 ok
+base=0x7fa58e077000
+--- N=3600000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1494656 (reader/other)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1494656 (reader/other)
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1494656 (reader/other)
+--- N=3700000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1594656 (reader/other)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1594656 (reader/other)
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1594656 (reader/other)
+--- N=3800000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1694656 (reader/other)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1694656 (reader/other)
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1694656 (reader/other)
+--- N=3900000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1794656 (reader/other)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1794656 (reader/other)
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1794656 (reader/other)
+--- N=4000000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1894656 (reader/other)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1894656 (reader/other)
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1894656 (reader/other)
+--- N=4100000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1994656 (reader/other)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1994656 (reader/other)
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-1994656 (reader/other)
+--- N=4200000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-2094656 (reader/other)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-2094656 (reader/other)
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-2094656 (reader/other)
+--- N=4400000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-2294656 (reader/other)
+try1: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-2294656 (reader/other)
+try2: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  alloc=2105344 delta_vs_N=-2294656 (reader/other)
+BUCKET CONTROL NOT CONFIRMED (rdi != SIG8 for all N)
+final x: NO_X
+=== done ===

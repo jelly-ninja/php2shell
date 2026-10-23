@@ -1,0 +1,8 @@
+    libphp=0x7f1b442ec000
+    copies=['0x7f1b41e0166a', '0x7f1b41e01712', '0x7f1b41e017ba', '0x7f1b41e01862', '0x7f1b41e0190a', '0x7f1b41e019b2']
+    V=None OBJ=None BOFF=None
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom104.py", line 128, in <module>
+    assert OBJ, "no legal (copy,BOFF) -> new boot needed"
+           ^^^
+AssertionError: no legal (copy,BOFF) -> new boot needed

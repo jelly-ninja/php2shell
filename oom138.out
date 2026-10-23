@@ -1,0 +1,17 @@
+=== oom138: pool-seasoned arm ===
+sapi: SAPI=apache2handler lim=8388608 vars=100000
+md5 ok
+base=0x7f953df47000
+fatal body=19088201 (expect 13,589,545)
+meas r0 t0: http=200 segv+0 NO_X
+meas r0 t1: http=200 segv+0 NO_X
+meas r0 t2: http=200 segv+0 NO_X
+meas r0 t3: http=-1 segv+0 NO_X
+no core
+meas r1 t0: http=200 segv+0 NO_X
+meas r1 t1: http=200 segv+0 NO_X
+meas r1 t2: http=200 segv+0 NO_X
+meas r1 t3: http=200 segv+0 NO_X
+no core
+final x: NO_X
+=== done ===

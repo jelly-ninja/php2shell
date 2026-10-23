@@ -1,0 +1,50 @@
+=== [0] stock + lim=8M ===
+[ini] SAPI=apache2handler lim=8M vars=100000
+=== [1] warm-up + sacrifice + 6 fires ===
+  warm k1=1900: 200       segv+=0 cores=0
+  warm k1=1950: 200       segv+=0 cores=0
+  warm k1=2000: 200       segv+=0 cores=0
+  warm k1=2044: 200       segv+=0 cores=0
+  warm k1=2100: 200       segv+=0 cores=0
+  warm k1=2200: 200       segv+=0 cores=0
+  warm k1=2400: 200       segv+=0 cores=0
+  warm k1=2600: 200       segv+=0 cores=0
+  warm k1=2800: 200       segv+=0 cores=0
+  warm k1=3000: 200       segv+=0 cores=0
+  warm k1=3200: 200       segv+=0 cores=0
+  SACRIFICE: URLError  segv+=1 cores=1
+  fire0: URLError  segv+=1 cores=1
+  fire1: URLError  segv+=1 cores=1
+  fire2: 200       segv+=0 cores=1
+  fire3: URLError  segv+=1 cores=1
+  fire4: URLError  segv+=1 cores=1
+  fire5: 200       segv+=0 cores=1
+>>> phase1: 4/6 post-sacrifice crashes
+=== [2] restart, NO re-warmup, 3 fires ===
+  rst-fire0: 200       segv+=0 cores=0
+  rst-fire1: 200       segv+=0 cores=0
+  rst-fire2: 200       segv+=0 cores=0
+>>> phase2 (no warmup): 0/3
+=== [3] restart + full recipe, 3 fires ===
+  warm2 k1=1900: 200       segv+=0 cores=0
+  warm2 k1=1950: 200       segv+=0 cores=0
+  warm2 k1=2000: 200       segv+=0 cores=0
+  warm2 k1=2044: 200       segv+=0 cores=0
+  warm2 k1=2100: 200       segv+=0 cores=0
+  warm2 k1=2200: 200       segv+=0 cores=0
+  warm2 k1=2400: 200       segv+=0 cores=0
+  warm2 k1=2600: 200       segv+=0 cores=0
+  warm2 k1=2800: 200       segv+=0 cores=0
+  warm2 k1=3000: 200       segv+=0 cores=0
+  warm2 k1=3200: 200       segv+=0 cores=0
+  SACRIFICE2: 200       segv+=0 cores=0
+  armed-fire0: URLError  segv+=1 cores=1
+  armed-fire1: URLError  segv+=1 cores=1
+  armed-fire2: URLError  segv+=1 cores=1
+>>> phase3 (re-armed): 3/3
+=== [4] rdi across cores ===
+  rdi-fire0: URLError  segv+=1 cores=1
+  rdi-fire1: URLError  segv+=1 cores=1
+  core0: 
+=== [5] restore ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000

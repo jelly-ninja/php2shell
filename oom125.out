@@ -1,0 +1,14 @@
+=== oom125: tag-mapped block arm ===
+md5 ok
+base=0x7fb580916000
+--- round 1 (B=None) ---
+main body 6.89 MB
+r1 try0: http=200 segv+0 core=False r=<br />
+<b>Fatal error</b>:  Allowed memory size of 8388608 b
+r1 try1: http=200 segv+0 core=False r=<br />
+<b>Fatal error</b>:  Allowed memory size of 8388608 b
+r1 try2: http=200 segv+0 core=False r=<br />
+<b>Fatal error</b>:  Allowed memory size of 8388608 b
+r1 /tmp/x: 'cat: /tmp/x: No such file or directory'
+!!! /tmp/x EXISTS - CAMPAIGN WON (round 1)
+=== done ===

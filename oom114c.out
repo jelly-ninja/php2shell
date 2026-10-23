@@ -1,0 +1,16 @@
+=== oom114: names-walk + values-fields ===
+libphp base: 0x7f1b44408000
+names-m: (200) Fatal=False len=43
+names copies: ['0x7f1b42656328', '0x7f1b42656360', '0x7f1b42656398', '0x7f1b426563d0', '0x7f1b42656408', '0x7f1b42656440', '0x7f1b42656478', '0x7f1b426564b0']
+fat-m: Fatal=True
+values copies: ['0x7f1b41e01718', '0x7f1b41e02518', '0x7f1b41e03318', '0x7f1b41e04118', '0x7f1b41e04f18', '0x7f1b41e05d18']
+FV=0x7f1b41e01718
+OBJ=0x7f1b41e01b18
+fat-aim: Fatal=True
+readback @OBJ: rc=1347440720 ti=0x50505050
+free_obj slot: 0x0 (want 0x7f1b447a38a0)
+fire0: Fatal=True
+fire1: Fatal=True
+fire2: Fatal=False
+fire3: Fatal=True
+final: ls: cannot access '/tmp/x': No such file or directory | ls: cannot access '/tmp/core': No such file or directory

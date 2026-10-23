@@ -1,0 +1,23 @@
+    libphp=0x7f1b442ec000
+-- cycle 0 --
+    copies=['0x7f1b4220166a', '0x7f1b42201712', '0x7f1b422017ba', '0x7f1b42201862']
+    V=0x7f1b4220166a OBJ=0x7f1b42201908 BOFF=670
+    plant0: 200
+    plant1: 200
+    plant2: 200
+    fat: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+-- cycle 1 --
+    copies=['0x7f1b41e0166a', '0x7f1b41e01712', '0x7f1b41e017ba', '0x7f1b41e01862']
+    V=0x7f1b41e0166a OBJ=0x7f1b41e01908 BOFF=670
+    plant0: 200
+    plant1: 200
+    plant2: 200
+    fat: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+-- cycle 2 --
+    copies=['0x7f1b41e0166a', '0x7f1b41e01712', '0x7f1b41e017ba', '0x7f1b41e01862']
+    V=0x7f1b41e0166a OBJ=0x7f1b41e01908 BOFF=670
+    plant0: 200
+    plant1: 200
+    plant2: 200
+    fat: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+done; /tmp/x=cat: /tmp/x: No such file or directory

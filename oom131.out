@@ -1,0 +1,51 @@
+=== oom131: window-corrected arm ===
+md5 ok
+shaped segv=3
+base=0x7f607d821000
+pre x: NO_X
+m=12.42MB delta_vs_verbatim=-564576
+--- r1 (B=None OFF=None) ---
+r1-meas try0: http=200 segv+0 core=False
+r1-meas try1: http=-1 segv+1 core=True
+r1-meas x: NO_X
+r1-meas gdb: rdi            0x4b4b4b4b4b4b4b4b  5425512962855750475
+rbx            0x7f607b103be0      140052358249440
+rip            0x7f607dba0e7b      0x7f607dba0e7b <zend_array_destroy+539>
+tag hits: []
+SIG8 clusters: 0 hits, span []..[]
+no anchors in core
+--- r2 (B=None OFF=None) ---
+r2-meas try0: http=200 segv+0 core=False
+r2-meas try1: http=200 segv+0 core=False
+r2-meas try2: http=-1 segv+1 core=True
+r2-meas x: NO_X
+r2-meas gdb: rdi            0x4b4b4b4b4b4b4b4b  5425512962855750475
+rbx            0x7f607b503be0      140052362443744
+rip            0x7f607dba0e7b      0x7f607dba0e7b <zend_array_destroy+539>
+tag hits: []
+SIG8 clusters: 0 hits, span []..[]
+no anchors in core
+--- r3 (B=None OFF=None) ---
+r3-meas try0: http=200 segv+0 core=False
+r3-meas try1: http=200 segv+0 core=False
+r3-meas try2: http=-1 segv+1 core=True
+r3-meas x: NO_X
+r3-meas gdb: rdi            0x4b4b4b4b4b4b4b4b  5425512962855750475
+rbx            0x7f607b503be0      140052362443744
+rip            0x7f607dba0e7b      0x7f607dba0e7b <zend_array_destroy+539>
+tag hits: []
+SIG8 clusters: 0 hits, span []..[]
+no anchors in core
+--- r4 (B=None OFF=None) ---
+r4-meas try0: http=200 segv+0 core=False
+r4-meas try1: http=200 segv+0 core=False
+r4-meas try2: http=-1 segv+1 core=True
+r4-meas x: NO_X
+r4-meas gdb: rdi            0x4b4b4b4b4b4b4b4b  5425512962855750475
+rbx            0x7f607b503be0      140052362443744
+rip            0x7f607dba0e7b      0x7f607dba0e7b <zend_array_destroy+539>
+tag hits: []
+SIG8 clusters: 0 hits, span []..[]
+no anchors in core
+final x: NO_X
+=== done ===

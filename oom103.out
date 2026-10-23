@@ -1,0 +1,18 @@
+    libphp=0x7f1b442ec000
+-- cycle 0 --
+    V=0x7f1b4220166a aim=(139755050244072, 382)
+    plant: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+    trigger: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+-- cycle 1 --
+    V=0x7f1b41e0166a aim=(139755046049768, 382)
+    plant: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+    trigger: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+-- cycle 2 --
+    V=0x7f1b41e0166a aim=(139755046049768, 382)
+    plant: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+    trigger: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+-- cycle 3 --
+    V=0x7f1b41e0166a aim=(139755046049768, 382)
+    plant: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+    trigger: 200 b'<br />\n<b>Fatal error</b>:  Allowed memo'
+done; /tmp/x=cat: /tmp/x: No such file or directory

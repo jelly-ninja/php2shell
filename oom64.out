@@ -1,0 +1,31 @@
+=== [0] stock verify ===
+[md5] ce1f3c48ba22f8f17834ac791aead613
+[attack] 13590311 bytes
+=== variant lim=14M ===
+[ini] SAPI=apache2handler lim=14M vars=100000
+  lim=14M: 200 segv+=0 oom+=0 cores=0
+=== variant lim=13M ===
+[ini] SAPI=apache2handler lim=13M vars=100000
+  lim=13M: 200 segv+=0 oom+=0 cores=0
+=== variant lim=12500000 ===
+[ini] SAPI=apache2handler lim=12500000 vars=100000
+  lim=12500000: 200 segv+=0 oom+=0 cores=0
+=== variant lim=12M ===
+[ini] SAPI=apache2handler lim=12M vars=100000
+  lim=12M: 200 segv+=0 oom+=0 cores=0
+=== variant lim=11M ===
+[ini] SAPI=apache2handler lim=11M vars=100000
+  lim=11M: 200 segv+=0 oom+=0 cores=0
+=== variant lim=10M ===
+[ini] SAPI=apache2handler lim=10M vars=100000
+  lim=10M: 200 segv+=0 oom+=0 cores=0
+=== variant lim=9M ===
+[ini] SAPI=apache2handler lim=9M vars=100000
+  lim=9M: 200 segv+=0 oom+=0 cores=0
+=== variant lim=8M ===
+[ini] SAPI=apache2handler lim=8M vars=100000
+  lim=8M: 200 segv+=0 oom+=0 cores=0
+=== [2] hit=None ===
+=== [3] restore ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000
+=== DONE hit=None ===

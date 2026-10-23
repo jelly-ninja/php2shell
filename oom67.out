@@ -1,0 +1,24 @@
+=== [0] stock + lim=8M, fresh boot ===
+[ini] SAPI=apache2handler lim=8M vars=100000 pids: 1,17,18
+[baseline] segv=60
+=== [1] oom65 sequence replay ===
+  k1=1900: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=1950: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=2000: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=2044: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=2100: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=2200: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=2400: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=2600: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=2800: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=3000: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=3200: 200       segv+=0 cores=0 pids 1,17,18 -> 1,17,18
+  k1=3400: URLError  segv+=1 cores=1 pids 1,17,18 -> 1,18,19
+=== [2] finisher reps (k1=3400) ===
+  rep0: 200       segv+=0 cores=1 pids 1,18,19 -> 1,18,19
+  rep1: URLError  segv+=1 cores=1 pids 1,18,19 -> 1,18,20
+  rep2: URLError  segv+=1 cores=1 pids 1,18,20 -> 1,18,21
+  rep3: URLError  segv+=1 cores=1 pids 1,18,21 -> 1,18,73
+=== RESULT: finisher crashes=3/4 ===
+=== [3] restore ===
+[restored] ce1f3c48 SAPI=apache2handler lim=128M vars=1000

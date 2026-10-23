@@ -1,0 +1,16 @@
+[0] boot + core env
+  libphp=0x7fdabe321000 heap=0x7fdabc600000 VA0=0x7fdabc601718 &zif_system=0x7fdabe6bc8a0
+  tile[0:40]: 201760bcda7f000001000000080100000000000000000000b01760bcda7f0000b01760bcda7f0000
+[1] warm (all values = weaponized tile)
+    warm done
+[2] sacrifice + finishers
+  fire0: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (trie'
+  /tmp/x: not yet
+  fire1: ERR b'<urlopen error [Errno 32] Broken pipe>'
+  /tmp/x: not yet
+  fire2: ERR b'<urlopen error [Errno 32] Broken pipe>'
+  /tmp/x: not yet
+  fire3: ERR b'<urlopen error [Errno 32] Broken pipe>'
+  /tmp/x: not yet
+[3] restore
+    restored: SAPI=apache2handler lim=8M vars=100000

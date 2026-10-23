@@ -1,0 +1,8 @@
+    libphp=0x7f1b442ec000
+    probe: R=0x7f1b42200000 offs=[139755050243690, 139755050243858, 139755050244026, 139755050244194]
+    V=0x7f1b4220166a (mod16=10)
+Traceback (most recent call last):
+  File "/Users/vlad/Projects/queue/php2shell-lab/oom99.py", line 136, in <module>
+    OUT("    OBJ=0x%x (value-off %d)" % (OBJ, BOFF_USE))
+                                              ^^^^^^^^
+NameError: name 'BOFF_USE' is not defined

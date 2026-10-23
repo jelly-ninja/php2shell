@@ -1,0 +1,32 @@
+[0] boot + core env
+[1] STAGE A: warm + calibration crash
+  marker fire: ERR b'<urlopen error [Errno 32] Broken pipe>'
+14d4d   433757350076173645
+rip            0x7f7c3bb94e7b      0x7f7c3bb94e7b <zend_array_destroy+539>
+rsi            0x7f7c39000000      140171508973568
+
+warning: Can't open file /dev/zero (deleted) during file-backed mapping note processing
+
+warning: core file may not match specified executable file.
+Unable to read JIT descriptor from remote memory
+Unable to read JIT descriptor from remote memory
+[A] marker VA = 0x7f7c39001718, &zif_system = 0x7f7c3ba948a0
+[2] STAGE B: weaponized body (same envelope)
+  sizes: weaponized=13590311 proven=13590311 identical=True
+[3] aimed fires (first post-sacrifice fire is the survivor slot — loop)
+  fire0: ERR b'[Errno 54] Connection reset by peer'
+  /tmp/x: not yet (ls: cannot access '/tmp/x': No such file or directory)
+  crash: rip=7f7c3bb94e7b rdi=0x605040302014d4d
+  rdi bytes: 4d4d010203040506 (want 181700397c7f0000)
+  fire1: 200 b'<br />\n<b>Fatal error</b>:  Allowed memory size of 8388608 bytes exhausted (tried to allocate 28672 '
+  /tmp/x: not yet (ls: cannot access '/tmp/x': No such file or directory)
+  fire2: ERR b'<urlopen error [Errno 32] Broken pipe>'
+  /tmp/x: not yet (ls: cannot access '/tmp/x': No such file or directory)
+  crash: rip=7f7c3bb94e7b rdi=0x605040302014d4d
+  rdi bytes: 4d4d010203040506 (want 181700397c7f0000)
+  fire3: ERR b'<urlopen error [Errno 32] Broken pipe>'
+  /tmp/x: not yet (ls: cannot access '/tmp/x': No such file or directory)
+  crash: rip=7f7c3bb94e7b rdi=0x605040302014d4d
+  rdi bytes: 4d4d010203040506 (want 181700397c7f0000)
+[4] restore
+    restored: SAPI=apache2handler lim=8M vars=100000
