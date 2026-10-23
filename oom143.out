@@ -1,0 +1,15 @@
+== A: winning groom vs sane config ==
+groom body len: 3500306
+A0 http=200 no-fatal
+A0 segv=[] cores=0 x=NO_X
+A1 http=200 no-fatal
+A1 segv=[] cores=0 x=NO_X
+A2 http=200 no-fatal
+A2 segv=[] cores=0 x=NO_X
+== B: adversarial max-alloc body vs sane config ==
+adversarial body len: 7746299
+B0 http=200 no-fatal
+B0 segv=[] cores=0 x=NO_X
+B1 http=200 no-fatal
+B1 segv=[] cores=0 x=NO_X
+=== done ===

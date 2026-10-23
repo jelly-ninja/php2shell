@@ -363,7 +363,17 @@ every stuck phase in this campaign.
 ## For defenders
 
 - **Patch.** 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 (or vendor backports).
-  Configuration mitigations reduce exposure; none are complete.
+- **Configuration works — measured.** We fired the exact winning groom
+  (plus a 7.7 MB adversarial max-alloc body) at the same stock vulnerable
+  `php:8.2.34-apache` binary with production-default ini
+  (`memory_limit=128M`, `post_max_size=8M`, `max_input_vars=1000`):
+  clean HTTP 200 every time, no fatal, no segfault, no core, no shell.
+  The chain needs the memory_limit fatal to fire *during* POST parsing —
+  keep `memory_limit` at least ~2× your `post_max_size` (parse roughly
+  doubles wire allocations) and the trigger becomes unreachable. The win
+  lab's `16M / 4096M` ratio is the exploit's home turf; don't live there.
+  Note `max_input_vars` alone does nothing here: one field name is one
+  variable, and 3 variables is under any sane limit.
 - **Detect on the trio**, correlated: ~3.5 MB urlencoded form field names
   with raw control bytes in field *values*; `memory size ... exhausted
   (tried to allocate ...) ... in Unknown on line 0` in the PHP log; shells

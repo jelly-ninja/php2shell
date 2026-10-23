@@ -236,3 +236,10 @@ BASE must be read per-run from /proc/1/maps of php_vuln (importing oom141 leaves
 cores land in php_vuln /tmp/core on arm (driver only auto-pulls in measure branch); arm core: rip=zif_system+0,
 rdi=rbx=B exact, rdx=B+0x68 handler table, GS zval @ B+0x90 (type 6, len 13). Measure gate: rdi == SIG8 exact (141g, try0).
 NCSC-NL/php2shell = defensive tracker, no PoC; detection rules = fallback field-size source (unused — groom worked).
+
+## WORKAROUND VERIFICATION (2026-10-24, oom143)
+- php_vuln_sane: stock php:8.2.34-apache, SAME topology as php_vuln, sane ini (40-sane.ini: memory_limit=128M, post_max_size=8M, max_input_vars=1000, upload 2M/20) on 127.0.0.1:8085.
+- A) exact winning groom (SIG8@v+72, VLEN=295, N=3500000) x3 → 200, no parse fatal, segv [], cores 0, NO_X.
+- B) adversarial 900-var × 8.7KB ≈ 7.75M wire (< 8M post, < 1000 vars) ×2 → 200, POSTCOUNT path clean, segv [], cores 0, NO_X.
+- VERDICT: config workaround MEASURED effective on unpatched 8.2.34. Mechanism: chain requires memory_limit fatal DURING POST parse; sane ratio (memory_limit ≥ 2× post_max_size) makes trigger unreachable. max_input_vars irrelevant (3 vars only).
+- Confounders controlled: same binary, same volume mounts, same worker conf, only ini differs vs 8083 win container.
