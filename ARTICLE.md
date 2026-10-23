@@ -1,8 +1,8 @@
-# php2shell: from the Datadog walkthrough to a working RCE on stock php:8.2.34
+# php2shell: from OpenAI's "Patch the Planet" announcement to a working RCE on stock php:8.2.34
 
-*How one blog post turned a month of probabilistic heap-spraying into a
-deterministic, artifact-verified exploit chain — and what it took to port it
-to an unmodified `php:8.2.34-apache` container.*
+*The announcement described the lock in detail. Nobody shipped the key.
+This is the timeline of how our one-container Docker lab rebuilt the
+withheld exploit chain in three days — and the seven gates it had to pass.*
 
 **Target:** stock `php:8.2.34-apache` (x86_64), libphp md5
 `ce1f3c48ba22f8f17834ac791aead613` — unmodified, verified after every boot.
@@ -12,6 +12,63 @@ contains `www-data`; the worker survives; the HTTP response is a clean 200.
 vulnerable side of the patched releases (8.2.35 / 8.3.36 / 8.4.27 / 8.5.12).
 
 ---
+
+## October 21, 2026: the announcement
+
+OpenAI's **"Patch the Planet"** initiative announced its flagship case: two
+critical vulnerabilities in PHP's POST handling — CVE-2026-109618 and
+CVE-2026-109619, CVSS 9.2, remote code execution, exploitable before any
+application code runs.
+
+**What they said happened:**
+
+- **Calif** found the bug **using GPT-5.6 Sol** under Patch the Planet;
+  **Wiz independently discovered and reported both CVEs**. Credits:
+  109618 = Calif, Wiz, OpenAI, Quarkslab; 109619 = Wiz, Calif, OpenAI.
+- A **two-month secret coalition**: PHP maintainers, Wiz, Cloudflare,
+  Corelight (Zeek/Suricata detection rules pre-shipped), CrowdStrike, and
+  government partners — the White House "Super Intelligence Force", ONCD,
+  CISA.
+- The framing: *"Frontier AI found these vulnerabilities before attackers
+  did"* — coining the **"Defender's Window"** for the secret prep period
+  between discovery and disclosure.
+- Shipped alongside: an `openai/php2shell-checker` Codex skill for
+  operators, $1B in subsidized "Daybreak for Frontline Defenders" access,
+  and a proposed 5-stage disclosure framework offered for community
+  feedback.
+
+**The same day, PHP shipped the fixes:** 8.5.12, 8.4.27, 8.3.36, 8.2.35.
+
+## The timeline
+
+| Date | Event |
+| --- | --- |
+| PHP 5.4 era | The vulnerable pattern enters the codebase (per Sansec, the class dates back ~14 years) |
+| Aug–Oct 2026 | The secret coalition works the bug for two months |
+| **Oct 17** | AWS observes exploitation attempts in the wild — *four days before disclosure* |
+| **Oct 20** | Details leak (Huntress: "leaked critical PHP vulnerabilities") — the Defender's Window partially blown |
+| **Oct 21** | Patches shipped; OpenAI's Patch the Planet announcement; watchTowr honeypots report **in-the-wild exploitation the same day** |
+| **Oct 22** | Datadog Security Labs publishes the walkthrough that made the shape public |
+| **Oct 22–24** | Our lab ports the shape to stock `php:8.2.34-apache` |
+| **Oct 24** | `/tmp/x` contains `www-data` — the withheld chain, rebuilt |
+
+## What the announcement didn't ship
+
+The chain itself. CrowdStrike's part of the disclosure *admits* a working
+exploit exists — consistent across x86-64 **and** ARM, survives worker
+restarts, **defeats ASLR using only HTTP requests** — with zero code.
+Calif's writeup stops at mechanics ("we achieved RCE"). Every public PoC
+stops at the memory-disclosure primitive. The working weapon lives inside
+the coalition, and exits nowhere public.
+
+And the "before attackers did" window lasted exactly as long as the secret:
+details leaked Oct 20, honeypots caught exploitation within about a day of
+the patches.
+
+That's the gap this article sits in. Everything below is what it took to
+rebuild the missing half — the *shape* was public as of Datadog's
+walkthrough; the *constants* were not; and the difference between them is
+the whole story.
 
 ## Where we were before Datadog: the sea
 
@@ -26,7 +83,8 @@ reads buckets 32 bytes apart — but no control over *what* sat in the bucket
 when the walk arrived. Every miss looked identical to every other miss.
 
 That's the honest baseline. The bug class was understood; the *grooming* was
-guesswork. Then Datadog published.
+guesswork. The announcement had told the world the lock existed — and, two
+days later, Datadog's post showed its shape.
 
 ## The Datadog moment
 
@@ -214,6 +272,52 @@ ran during cleanup — `system("whoami>/tmp/x")` executing as `www-data` on a
 stock, unmodified runtime that no application-level defense can reach,
 because the whole chain runs before any PHP script.
 
+## The seven gates
+
+The chain only works if every stage hands the next one a proven invariant.
+Ours, in order:
+
+**Gate 1 — Predictable failure.** One oversized urlencoded field name; the
+fatal reads `tried to allocate N+32 ... in Unknown on line 0`. The failure
+point is the key allocation at hash-insert (`zend_hash.c:1110`), tunable by
+N, and it fires before any application code. N = 3,500,000 → `3500032`,
+byte-for-byte Datadog's signature.
+
+**Gate 2 — Capture.** The freed field-value buffer must land in the same
+malloc size class the hash table allocates from, so the stale bucket reads
+*our* bytes. Evidence standard: the crash pointer holds our filler
+(`0xdedede…`), not foreign ASCII. This gate stayed invisible until we
+killed the percent-encoding bug — the wire length of the raw value IS the
+groom size.
+
+**Gate 3 — Geometry.** Know exactly where the walk reads. The core dump
+answered: bucket 1 starts at value+72; val/type/h/key sit at
++72/+80/+88/+96, and the key is read last. Measured from surviving markers
+in the core, not derived from hope.
+
+**Gate 4 — Measure: command the crash.** Plant a canary pointer at v+72:
+`measure rdi=0x51e2c0de51e2c0de want=0x51e2c0de51e2c0de`, first try. From
+this gate on, the walk dereferences whatever we choose.
+
+**Gate 5 — Dispatch.** Swap the canary for a fake `zend_object` (type
+IS_OBJECT, refcount 1): the walk's refcount-0 path runs `rc_dtor_func` →
+`store_del` → `call *0x8(%rdi)` — the destructor slot — with rdi = our
+object base exactly. The first arm run proved the jump landed on
+`zif_system`'s first instruction.
+
+**Gate 6 — Relocation.** A function pointer is only as good as its base.
+That first arm jumped to the raw file offset (the BASE=0 bug) and died
+unmapped. Reading the live load base from `/proc/1/maps` — cross-checked
+against the core-derived base — turned the jump into a real call.
+
+**Gate 7 — Win.** The command string zval survives `system()`'s prologue:
+`whoami>/tmp/x` runs as `www-data` during cleanup, the response is the
+ordinary memory fatal (clean 200), the worker survives — and `/tmp/x`
+exists with the right md5.
+
+Gates 1–3 are the groom. Gate 4 is the pivot from hoping to commanding.
+Gates 5–6 are the arm. Gate 7 is the only one that counts.
+
 ## What Datadog got right — and what only measurement gives
 
 The post is a model of responsible disclosure research: full mechanics, no
@@ -251,7 +355,7 @@ groom body builder), `oom141h.py` (arm phase with live-base resolution),
 per-round output logs `oom110` → `oom141h2` — including all the failures
 reproduced above.
 
-*Timeline: fixes shipped Oct 21, 2026 · in-the-wild exploitation reported
-from Oct 17 · watchTowr analysis Oct 21 · Datadog walkthrough Oct 22 ·
-NCSC-NL defensive tracker · our port to stock 8.2.34 completed Oct 24,
-2026.*
+*Rebuilt from public shape + our own core dumps in three days. The
+coalition had two months, five orgs, and the source. We had a Docker
+container, Datadog's walkthrough, and a rule that every claim needs an
+artifact.*
