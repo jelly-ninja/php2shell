@@ -1,0 +1,17 @@
+body len: 3500306 N: 3500000
+try0: http=200
+  body[:220]: b'<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3502080 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  segv markers: []
+  cores: 0
+  x: NO_X
+try1: http=200
+  body[:220]: b'<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3502080 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  segv markers: []
+  cores: 0
+  x: NO_X
+try2: http=200
+  body[:220]: b'<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3502080 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+  segv markers: []
+  cores: 0
+  x: NO_X
+=== done ===

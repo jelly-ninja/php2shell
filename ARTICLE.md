@@ -318,6 +318,35 @@ exists with the right md5.
 Gates 1–3 are the groom. Gate 4 is the pivot from hoping to commanding.
 Gates 5–6 are the arm. Gate 7 is the only one that counts.
 
+## Did they really patch it? Yes — verified
+
+We didn't take the fix on faith. We diffed the sources and fired the exact
+winning groom at a real `php:8.2.35-apache` container.
+
+**What changed in the source** (8.2.34 → 8.2.35): the POST-parsing path
+gained an out-of-memory check after *every* allocation — including the
+`estrndup` of each field value and the exact key allocation whose failure
+was our fatal point. On exhaustion, parsing now unwinds cleanly: free the
+value, abort the request, leave nothing behind. The NEWS entry names it:
+"Fixed ... Avoid state corruption via bailout." Around it: GPC arrays
+switched to `array_init_singleton` (no more classic bucket tables at our
+capture size), 21 hunks of rework in the very `zend_hash.c` walk we
+hijacked, and a new regression suite — `oom_request_parsing.phpt`,
+`oom_pending_at_shutdown.phpt` and ~150 siblings — that treats this attack
+class as a permanent test target.
+
+**What the live probe measured**: same body, same constants (SIG8 at v+72,
+VLEN 295, N swept 3.2M–3.8M). On 8.2.34, five of five runs died at N+32 —
+the key allocation of hash-insert — and the shutdown walk segfaulted.
+On 8.2.35: zero of five. Every run fatals at a *different* allocation
+(N+1072, N+528, N+2080, N+3632, N+1088) — wherever the memory budget
+happens to run out — with no crash, no core, no `/tmp/x`. The vulnerable
+signature is gone. The parse never reaches the corrupted state, so there
+is nothing left at shutdown to exploit.
+
+The Defender's Window held. When the disclosure landed, the patched
+releases were already waiting.
+
 ## What Datadog got right — and what only measurement gives
 
 The post is a model of responsible disclosure research: full mechanics, no

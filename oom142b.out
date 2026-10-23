@@ -1,0 +1,11 @@
+N=3200000 http=200 alloc=b'3203072 bytes'
+  b'<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3203072 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+N=3350000 http=200 alloc=b'3350528 bytes'
+  b'<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3350528 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+N=3500000 http=200 alloc=b'3502080 bytes'
+  b'<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3502080 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+N=3650000 http=200 alloc=b'3653632 bytes'
+  b'<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3653632 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+N=3800000 http=200 alloc=b'3801088 bytes'
+  b'<br />\n<b>Fatal error</b>:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 3801088 bytes) in <b>Unknown</b> on line <b>0</b><br />\n'
+=== sweep done ===
