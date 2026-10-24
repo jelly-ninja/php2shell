@@ -361,6 +361,30 @@ with upload progress still enabled. Upstream calls the combination
 "unlikely in practice" — but it is an RCE, in the same feature family
 as the 109619 stale-global-state bug we lived in for two weeks.
 
+We didn't take upstream's word for it. We rebuilt the preconditions in
+a local lab (config `session.serialize_handler=php_binary`, a victim
+script that flips it to `php` via `ini_set()` before `session_start()`,
+upload progress on, `session.upload_progress.cleanup=Off`) and drove
+the bug end to end:
+
+- **Injection point**: the `PHP_SESSION_UPLOAD_PROGRESS` *field value*.
+  The progress key is built from it as raw bytes — quotes, pipes and a
+  serialized object all survive. (Multipart *filenames* get truncated
+  at the first `"`, which is why filename-based injection fails.)
+- **Trigger**: a plain, *completed* multipart upload. `cleanup=Off`
+  keeps the poisoned record on disk; the app's own `session_start()`
+  decodes it with the `php` handler, which splits at the first `|` —
+  inside our key — and unserializes the object. A class whose
+  `__destruct` calls `system()` detonates as www-data. (Aborting
+  uploads to keep a record also works but is racy; completed uploads
+  with cleanup off are deterministic.)
+- **Verified on 8.2.34 and on 8.2.35**: the October 21 emergency
+  patches do not touch this bug. RCE — `uid=33(www-data)` from the
+  destructor payload — reproduced identically on both.
+- **Mitigation verified**: with `session.upload_progress.enabled=0`
+  the progress record is never written, the decode never happens, the
+  payload never fires. One config line, then restart every worker.
+
 The mitigation is one line: `session.upload_progress.enabled=0`,
 applied where it counts (php.ini, FPM pool, or
 `php_admin_flag` in Apache vhost config — not `ini_set()`, not

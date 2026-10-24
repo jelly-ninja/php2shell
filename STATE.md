@@ -252,3 +252,27 @@ NCSC-NL/php2shell = defensive tracker, no PoC; detection rules = fallback field-
 - MITIGATION MEASURED: session.upload_progress.enabled=0 (conf.d ini + restart) → record never written (0-byte sess), $_SESSION empty, x_gadget absent. Kill switch verified on 8.2.35.
 - Abort-race forensics: up2's 525-byte record survived only because the aborted POST never reached the script (absent from access log); all "completed" fast blasts got 200 + in-request session_start() consume/destroy → empty dumps (up4–up6 red herring: clean CT also showed "no record" for same reason). cleanup=Off removes the race entirely (up8, deterministic).
 - up1.py–up8.py + outs in lab dir; up8.py parameterized via UP_HOST/UP_CT.
+
+## FRESH RE-VERIFICATION + PUBLISH (2026-10-24, later)
+- Vlad: "Let's execute and verify" → clean-slate re-run of up8:
+  - deep-cleaned both containers (rm /tmp/x_gadget /tmp/sess_* inside),
+    verified live ini on both, THEN fired.
+  - 8.2.34: full chain visible end-to-end (raw poisoned record on disk →
+    __PHP_Incomplete_Class at target → real GadgetPwn w/ cmd=id at gadget
+    → destructor → uid=33(www-data)). WIN.
+  - 8.2.35: identical chain, identical result. NOT FIXED. WIN.
+  - Mitigation leg: enabled=0 → RAWLEN=0, empty session both stages;
+    first fire showed x_gadget = STALE from exploit run 40s prior
+    (restart keeps container fs); rm + re-fire → NO_XG. MITIGATION TRUE.
+  - second contamination catch in the mirror: verdict printed before
+    reading result. Lesson: clean INSIDE containers, not just host mount.
+- Restored exploit ini on php_up35, re-fired → both containers end with
+  live uid=33(www-data) win artifact.
+- Vlad: "publish an update for 8.2.35 to the repo" → secret-scanned
+  outbound diff (clean, only prose word "secret"), pushed main
+  c51342c..1a0d852 (5 commits: timeline, patch verify, workaround,
+  115560 advisory, 115560 RCE+mitigation). ls-remote confirmed.
+- ARTICLE.md addendum appended to Oct 23 section: measured 115560 results
+  (injection point = field VALUE; deterministic trigger = completed
+  upload + cleanup=Off; both versions RCE; enabled=0 kills it).
+  Committed and pushed in the same go (see next hash).
