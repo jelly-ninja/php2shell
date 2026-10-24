@@ -347,6 +347,26 @@ is nothing left at shutdown to exploit.
 The Defender's Window held. When the disclosure landed, the patched
 releases were already waiting.
 
+### October 23: not over — CVE-2026-115560
+
+Two days after the emergency releases, PHP posted an informational
+advisory for a third issue in the same session upload progress feature:
+CVE-2026-115560. It is **not** fixed by 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12
+and has no patch yet — the fix rides the next regular release.
+
+The precondition set is narrow: the app must configure
+`session.serialize_handler` as `php_binary` or `php_serialize`, then
+flip it to `php` at runtime with `ini_set()` before `session_start()`,
+with upload progress still enabled. Upstream calls the combination
+"unlikely in practice" — but it is an RCE, in the same feature family
+as the 109619 stale-global-state bug we lived in for two weeks.
+
+The mitigation is one line: `session.upload_progress.enabled=0`,
+applied where it counts (php.ini, FPM pool, or
+`php_admin_flag` in Apache vhost config — not `ini_set()`, not
+`.user.ini`), then restart every worker. If you already set it for
+109619 on October 21, you are covered for 115560 too. Keep it.
+
 ## What Datadog got right — and what only measurement gives
 
 The post is a model of responsible disclosure research: full mechanics, no
