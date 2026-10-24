@@ -1,0 +1,6 @@
+[A_clean] ct='application/octet-stream'
+    max sess size seen mid/post-upload: 0
+[B_pipe] ct='x|marker|'
+    max sess size seen mid/post-upload: 0
+[C_payload] ct='x|O:9:"GadgetPwn":0:{}|'
+    max sess size seen mid/post-upload: 0

@@ -243,3 +243,12 @@ NCSC-NL/php2shell = defensive tracker, no PoC; detection rules = fallback field-
 - B) adversarial 900-var × 8.7KB ≈ 7.75M wire (< 8M post, < 1000 vars) ×2 → 200, POSTCOUNT path clean, segv [], cores 0, NO_X.
 - VERDICT: config workaround MEASURED effective on unpatched 8.2.34. Mechanism: chain requires memory_limit fatal DURING POST parse; sane ratio (memory_limit ≥ 2× post_max_size) makes trigger unreachable. max_input_vars irrelevant (3 vars only).
 - Confounders controlled: same binary, same volume mounts, same worker conf, only ini differs vs 8083 win container.
+
+## CVE-2026-115560 VERIFICATION (2026-10-24, up1–up8)
+- Lab: /tmp/phplab_up (target.php = runtime flip php_binary→php; gadget.php = GadgetPwn class w/ system() __destruct). Containers: php_up (8.2.34) :8086, php_up35 (8.2.35) :8087, ini 50-up.ini (php_binary + upload_progress On + cleanup Off).
+- RCE CONFIRMED on 8.2.34 AND 8.2.35 under precondition config: POST multipart with PHP_SESSION_UPLOAD_PROGRESS field = `x|O:9:"GadgetPwn":0:{}|` → record key = upload_progress_x|O:9:... → php_binary file = [0x16][key][a:5:{...}] → victim session_start() with flipped 'php' handler splits at FIRST '|' (inside OUR key) → unserialize(GadgetPwn) → __destruct → system(id) > /tmp/x_gadget = uid=33(www-data). BOTH containers.
+- ADVISORY ACCURATE: 8.2.35 does NOT fix 115560 (identical RCE on patched build).
+- VECTOR SOURCE-TRACED (php-8.2.34 ext/session/session.c): MULTIPART_EVENT_FORMDATA appends RAW field value bytes to progress->key (no quote stripping, unlike FILE_START filename which PHP truncates at '"' — up1/up2 filename vectors dead). php_session_rfc1867_update writes via php_session_flush; MULTIPART_EVENT_END: cleanup=On deletes, cleanup=Off persists.
+- MITIGATION MEASURED: session.upload_progress.enabled=0 (conf.d ini + restart) → record never written (0-byte sess), $_SESSION empty, x_gadget absent. Kill switch verified on 8.2.35.
+- Abort-race forensics: up2's 525-byte record survived only because the aborted POST never reached the script (absent from access log); all "completed" fast blasts got 200 + in-request session_start() consume/destroy → empty dumps (up4–up6 red herring: clean CT also showed "no record" for same reason). cleanup=Off removes the race entirely (up8, deterministic).
+- up1.py–up8.py + outs in lab dir; up8.py parameterized via UP_HOST/UP_CT.
